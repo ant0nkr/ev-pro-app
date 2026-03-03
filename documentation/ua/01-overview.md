@@ -50,6 +50,19 @@ BYD EV Pro — це Android-застосунок, створений для ро
 
 ---
 
+## Документація та релізи
+
+Документація та APK-релізи публікуються на GitHub:
+
+**[github.com/ant0nkr/ev-pro-app](https://github.com/ant0nkr/ev-pro-app)**
+
+- **[Документація (EN)](https://github.com/ant0nkr/ev-pro-app/tree/main/documentation/en)** | **[Документація (UA)](https://github.com/ant0nkr/ev-pro-app/tree/main/documentation/ua)**
+- **[Релізи та Release Notes](https://github.com/ant0nkr/ev-pro-app/releases)**
+
+Документація оновлюється разом з новими релізами відповідно до нової функціональності.
+
+---
+
 ## Див. також
 
 - [Встановлення](02-installation.md)

@@ -50,6 +50,19 @@ The app is developed and tested on the **BYD Song Plus EV 2025** (Ocean series, 
 
 ---
 
+## Documentation and Releases
+
+Documentation and APK releases are published on GitHub:
+
+**[github.com/ant0nkr/ev-pro-app](https://github.com/ant0nkr/ev-pro-app)**
+
+- **[Documentation (EN)](https://github.com/ant0nkr/ev-pro-app/tree/main/documentation/en)** | **[Documentation (UA)](https://github.com/ant0nkr/ev-pro-app/tree/main/documentation/ua)**
+- **[Releases and Release Notes](https://github.com/ant0nkr/ev-pro-app/releases)**
+
+Documentation is updated alongside new releases to reflect the latest functionality.
+
+---
+
 ## See Also
 
 - [Installation](02-installation.md)
