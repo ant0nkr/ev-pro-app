@@ -43,7 +43,7 @@ Full user documentation is available in two languages:
 
 ## Releases
 
-APK releases are available in the [releases](releases/) folder and on the [GitHub Releases](https://github.com/ant0nkr/ev-pro-app/releases) page.
+APK releases with release notes are published on the [GitHub Releases](https://github.com/ant0nkr/ev-pro-app/releases) page. Documentation is updated alongside each release to reflect new functionality.
 
 ## Languages
 
