@@ -14,14 +14,17 @@ This guide covers installing BYD EV Pro on a BYD DiLink head unit.
 
 ## Step 1 — Enable ADB on the Head Unit
 
-1. On the head unit, open **Settings > About**.
-2. Tap **Build Number** seven times in quick succession. A toast message will confirm that Developer Options are unlocked.
-3. Go to **Settings > Developer Options**.
-4. Enable **USB debugging**.
-5. Enable **ADB over network** (the exact label varies by firmware; it may also appear as "Wireless debugging" or "ADB via Wi-Fi").
+ADB (Android Debug Bridge) must be enabled on the head unit for the app to work.
 
-> [!NOTE]
-> On most BYD DiLink units, ADB is already available over TCP once the toggle is enabled. If the option is not visible, you may need to connect the head unit to a PC via USB first to enable TCP mode.
+> [!WARNING]
+> Enabling ADB on DiLink 5.0 and newer requires a paid unlock procedure. On DiLink 3.0/4.0 this step is simpler and may not require payment.
+
+Detailed instructions for enabling ADB are available in the [BYDBoost Telegram group](https://t.me/bydboost/20597/20600). The group contains step-by-step guides for all DiLink versions.
+
+Once ADB is enabled, make sure the following toggles are turned on in the Developer Options menu:
+
+- **Wireless ADB debug switch**
+- **Debug mode when USB is connected**
 
 ---
 
