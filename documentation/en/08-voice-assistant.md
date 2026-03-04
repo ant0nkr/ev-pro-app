@@ -60,7 +60,7 @@ In Push-to-Talk mode, the timeout is 10 seconds.
 
 ## Voice Commands
 
-26 commands are supported across six categories. Each command works in both English and Ukrainian.
+28 commands are supported across seven categories. Each command works in both English and Ukrainian.
 
 ### Climate
 
@@ -119,6 +119,16 @@ In Push-to-Talk mode, the timeout is 10 seconds.
 |---|---|---|
 | "open trunk", "open boot" | "вiдкрий багажник" | Open trunk |
 | "close trunk", "close boot" | "закрий багажник" | Close trunk |
+
+### App Launch *(since 1.0.2)*
+
+| English Phrases | Ukrainian Phrases | Action |
+|---|---|---|
+| "launch navigation", "open navigation", "navigate", "open maps" | "вiдкрий навiгацiю", "запусти навiгацiю", "навiгацiя" | Launch the default navigation app |
+| "launch music", "open music", "play music" | "вiдкрий музику", "запусти музику", "грай музику" | Launch the default music app and start playback |
+
+> [!NOTE]
+> App launch commands require a default navigation or music app to be configured in **Settings > Default Navigation** / **Default Music**. If no app is set, the assistant will say "Navigation app is not configured" / "Music app is not configured".
 
 ---
 
