@@ -12,6 +12,9 @@ The Settings screen is the last tab in the navigation bar. It is organized into 
 | Auto-Start | On | Launch the app automatically on system boot and screen-on events. |
 | Legacy Connection | Off | Use an alternative (slower) connection method. Enable this if the default connection fails on your head unit model. |
 | Quick Actions Overlay | Off | Show or hide the floating quick actions pill. See [Quick Actions](09-quick-actions.md). |
+| Bring to Foreground on Wake | Off | When enabled, the app comes to the foreground automatically when the car screen turns on. When disabled, the app continues running in the background without stealing focus. *Since 1.0.2* |
+| Default Navigation | (not set) | Select a navigation app from the list of installed navigation apps. Used by the "launch navigation" voice command. *Since 1.0.2* |
+| Default Music | (not set) | Select a music app from the list of installed music apps. Used by the "launch music" voice command. The selected app will also auto-play when launched. *Since 1.0.2* |
 
 ---
 
@@ -27,7 +30,7 @@ The Settings screen is the last tab in the navigation bar. It is organized into 
 | Your Name | (empty) | Optional. When set, voice confirmations are personalized (e.g., "Hi Anton, turning on climate"). |
 | TTS Voice ID | (empty) | ElevenLabs voice ID for custom TTS output. Leave empty to use the default voice. |
 
-See [Voice Assistant](08-voice-assistant.md) for the full list of 26 supported commands.
+See [Voice Assistant](08-voice-assistant.md) for the full list of 28 supported commands.
 
 ---
 
