@@ -1,30 +1,57 @@
 # Voice Assistant
 
-BYD EV Pro includes a bilingual voice assistant that lets you control the vehicle with spoken commands in English or Ukrainian. Speech recognition and text-to-speech are powered by ElevenLabs cloud services.
+BYD EV Pro includes a bilingual voice assistant for vehicle control with spoken commands in English or Ukrainian. Two speech recognition backends are available: **VOSK** (offline, default) and **ElevenLabs** (cloud, optional).
 
 ---
 
-## Requirements
+## Backends
 
-| Requirement | Notes |
+### VOSK — Offline (Default)
+
+| | |
 |---|---|
-| Internet connection | Cloud API calls are required. No offline mode. |
-| ElevenLabs API key | Free tier provides approximately 10 minutes/month of speech recognition. Get one at [elevenlabs.io](https://elevenlabs.io). |
-| Microphone permission | Granted automatically on first app connection |
+| Internet required | No |
+| API key required | No |
+| Speech recognition | On-device (VOSK engine) |
+| Spoken responses (TTS) | No — confirmation shown as text in the UI |
+| Languages | One language at a time (matches app display language) |
 
-> [!NOTE]
-> The voice assistant does not work without a valid ElevenLabs API key. Android system TTS is used as a fallback for spoken responses, but speech recognition always requires ElevenLabs.
+VOSK runs entirely on the device. No data is sent anywhere. The recognition model (~80 MB for Ukrainian, ~40 MB for English) must be downloaded once — or use the **Full Edition** which includes models pre-bundled.
+
+### ElevenLabs — Cloud (Optional)
+
+| | |
+|---|---|
+| Internet required | Yes |
+| API key required | Yes ([elevenlabs.io](https://elevenlabs.io)) |
+| Speech recognition | ElevenLabs Scribe v2 |
+| Spoken responses (TTS) | Yes (`eleven_multilingual_v2`, configurable voice) |
+| Languages | Ukrainian, English, or both simultaneously |
+| Free tier | ~2.5 hours/month STT + ~10,000 chars/month TTS |
 
 ---
 
 ## Setup
 
-1. Obtain an ElevenLabs API key at [https://elevenlabs.io](https://elevenlabs.io). The free tier is sufficient for basic use.
-2. Open the app and go to **Settings**.
-3. Scroll to the **Voice Assistant** section.
+### VOSK (offline)
+
+1. Open the app and go to **Settings → Voice Assistant**.
+2. Make sure **Backend** is set to **VOSK (Offline)**.
+3. Enable the **Voice Assistant** toggle.
+4. If using the **Lite Edition**: tap **Download Model** to download the recognition model for your app language. The download is ~80 MB (Ukrainian) or ~40 MB (English). Wi-Fi recommended.
+5. Select an activation mode: **Always Listening** or **Push to Talk**.
+
+> [!NOTE]
+> The **Full Edition** includes models pre-bundled — no download needed.
+
+### ElevenLabs (cloud)
+
+1. Obtain an ElevenLabs API key at [https://elevenlabs.io](https://elevenlabs.io).
+2. Open the app and go to **Settings → Voice Assistant**.
+3. Set **Backend** to **ElevenLabs (Cloud)**.
 4. Enter your key in the **ElevenLabs API Key** field.
 5. Enable the **Voice Assistant** toggle.
-6. Select an activation mode: **Always Listening** (wake phrase) or **Push to Talk** (button).
+6. Select an activation mode.
 
 ---
 
@@ -32,35 +59,33 @@ BYD EV Pro includes a bilingual voice assistant that lets you control the vehicl
 
 | Mode | How to Activate | Behavior |
 |---|---|---|
-| Wake Phrase (Always Listening) | Say the wake phrase, then say a command | Listens continuously in the background. On detecting the wake phrase, signals readiness with audio feedback, then waits up to 7 seconds for a command. |
+| Wake Phrase (Always Listening) | Say the wake phrase, then say a command | Listens continuously in the background. On detecting the wake phrase, signals readiness, then waits up to 7 seconds for a command. |
 | Push to Talk (Button) | Tap the floating overlay pill | Activates immediately on tap. The pill turns green and plays a beep. Listens for a command and auto-stops after execution or a 10-second timeout. |
 
-Push-to-Talk mode is recommended when internet bandwidth is limited, as it avoids continuously processing background audio.
+Push-to-Talk is recommended for VOSK — it avoids continuous background recording.
 
 ---
 
 ## Wake Phrases
 
-| Language | Default Phrase | Also Recognized |
-|---|---|---|
-| Ukrainian | "Привiт BYD" | Various pronunciation variants are handled automatically |
-| English | "Hello BYD" | "Hey BYD" |
+| Language | Default Phrase |
+|---|---|
+| Ukrainian | "Привiт BYD" |
+| English | "Hello BYD" |
 
-Wake phrases are configurable in **Settings > Wake Phrases**. Punctuation (commas, periods, etc.) is stripped automatically before matching, so "Привiт, BYD" works the same as "Привiт BYD".
+Wake phrases are configurable in **Settings > Wake Phrases**. Punctuation is stripped automatically, so "Привiт, BYD" works the same as "Привiт BYD".
 
 ---
 
 ## 7-Second Command Window
 
-After the wake phrase is recognized, you have 7 seconds to say your command. If the assistant speaks a response during this window (e.g., an "unrecognized command" message), the window is automatically extended so you don't have to re-trigger the wake phrase.
-
-In Push-to-Talk mode, the timeout is 10 seconds.
+After the wake phrase is recognized, you have 7 seconds to say a command. If the assistant responds (e.g., "unrecognized command"), the window is extended automatically. In Push-to-Talk mode, the timeout is 10 seconds.
 
 ---
 
 ## Voice Commands
 
-28 commands are supported across seven categories. Each command works in both English and Ukrainian.
+28 commands across seven categories. Each works in both English and Ukrainian.
 
 ### Climate
 
@@ -128,18 +153,21 @@ In Push-to-Talk mode, the timeout is 10 seconds.
 | "launch music", "open music", "play music" | "вiдкрий музику", "запусти музику", "грай музику" | Launch the default music app and start playback |
 
 > [!NOTE]
-> App launch commands require a default navigation or music app to be configured in **Settings > Default Navigation** / **Default Music**. If no app is set, the assistant will say "Navigation app is not configured" / "Music app is not configured".
+> App launch commands require a default navigation or music app to be configured in **Settings > Default Navigation** / **Default Music**.
 
 ---
 
-## TTS Confirmation
+## Confirmation Response
 
-After each recognized command, the assistant speaks a confirmation in the detected language.
+After each recognized command, the assistant shows (and speaks, if ElevenLabs is active) a confirmation.
 
 | Name configured? | English example | Ukrainian example |
 |---|---|---|
 | Yes (e.g., "Anton") | "Hi Anton, turning on climate" | "Привiт, Anton, вмикаю клiмат" |
 | No | "Turning on climate" | "Вмикаю клiмат" |
+
+> [!NOTE]
+> With the **VOSK** backend, confirmations are shown as text only — there is no spoken response.
 
 The name is configurable in **Settings > Your Name**.
 
@@ -149,31 +177,27 @@ The name is configurable in **Settings > Your Name**.
 
 If the assistant is listening but does not recognize a command:
 
-- Speaks: "Command not recognized, please repeat" / "Не зрозумiв команду, повторiть"
+- Shows (and speaks if ElevenLabs): "Command not recognized, please repeat" / "Не зрозумiв команду, повторiть"
 - In wake mode: extends the 7-second window
 - In PTT mode: resets the 10-second timeout
 
 ---
 
-## Recognition Language Setting
+## Recognition Language
 
-You can hint the speech recognition engine to expect a specific language, which improves accuracy.
+| Setting | VOSK | ElevenLabs |
+|---|---|---|
+| Ukrainian only | Supported | Supported |
+| English only | Supported | Supported |
+| Both (auto-detect) | Not supported — falls back to app language | Supported |
 
-| Setting | Behavior |
-|---|---|
-| Ukrainian only | Optimized for Ukrainian speech |
-| English only | Optimized for English speech |
-| Both (default) | Auto-detects language (slightly lower accuracy) |
-
-Configure this in **Settings > Recognition Language**. Use "Both" only when you genuinely mix languages.
+Configure in **Settings > Recognition Language**.
 
 ---
 
-## Custom TTS Voice
+## ElevenLabs TTS Voice
 
-By default, the assistant uses the "George" voice from ElevenLabs. You can enter any valid ElevenLabs voice ID in **Settings > TTS Voice ID** to use a different voice.
-
-If ElevenLabs TTS fails (network error, quota exceeded), the assistant automatically falls back to Android system TTS.
+When using ElevenLabs, you can set a custom voice ID in **Settings > TTS Voice ID**. Default: George (`JBFqnCBsd6RMkjVDRZzb`).
 
 ---
 
