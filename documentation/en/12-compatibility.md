@@ -9,9 +9,8 @@ BYD EV Pro targets BYD vehicles running DiLink 3.0 through 6.0. The app reads th
 
 ## How to Check Your Version
 
-1. Open **Settings** in the app.
-2. Scroll to the **Vehicle Info** section.
-3. The **Vehicle Software** and **DiLink Version** fields show your firmware details.
+1. Open the app and go to **About**.
+2. The **Vehicle Info** section shows your firmware details, DiLink version, and detected model.
 
 ---
 
@@ -42,7 +41,7 @@ BYD EV Pro targets BYD vehicles running DiLink 3.0 through 6.0. The app reads th
 | Leopard 3/5 |
 | Dynasty |
 | Ocean |
-| Sea Lion 05 EV/DM-i, Seal 05/06 GT, Dolphin 25, Seagull 25 |
+| **Sea Lion 05 EV/DM-i, Seal 05/06 GT, Dolphin 25, Seagull 25** *(sensor compatibility improved in 1.0.2)* |
 | Yuan Plus 25, Yuan Up 25, Song Pro 25, Qin Plus 25 |
 | E7, Han, Tang, Song L, Seal, Sea Lion 07 |
 | **Song Plus** (primary test vehicle) |
@@ -71,8 +70,14 @@ BYD EV Pro targets BYD vehicles running DiLink 3.0 through 6.0. The app reads th
 | Issue | Affected Vehicles | Impact |
 |---|---|---|
 | Charging status not reported correctly | DiLink 5.1 vehicles | No impact — the app automatically uses an alternative detection method |
-| Motor temperature reads as invalid | Some models | Displayed as `--` (filtered automatically) |
 | MCU version shows "MCU_OFFLINE" | All models when car is OFF | Normal — real values appear when the vehicle is in ACC or READY state |
+
+---
+
+## Compatibility Notes by Version
+
+### 1.0.2
+- **Sea Lion 05 / Seagull 25 / Seal 05 / Dolphin 25** (firmware chipset 23, variant 1.22): Fixed firmware detection timing that could show "DiLink unknown" on first connect. Corrected battery voltage, battery current, and motor temperature sensor readings. These models are rear-wheel drive single-motor; the motor temperature display now reads the correct (rear) motor.
 
 ---
 
@@ -80,7 +85,7 @@ BYD EV Pro targets BYD vehicles running DiLink 3.0 through 6.0. The app reads th
 
 If features display incorrect values or dashes on your vehicle:
 
-1. Open **Settings**.
+1. Open the app and go to **Settings**.
 2. Tap **Export Diagnostic Bundle**.
 3. Use **Send Detailed Report** to share the bundle with the developer via Telegram.
 
