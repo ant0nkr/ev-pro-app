@@ -69,6 +69,21 @@
       }
     },
     {
+      "id": "sl07-1.82",
+      "match": {
+        "second_chip": "1.82"
+      },
+      "fids": {
+        "battery_max_temp": 1148190752,
+        "battery_min_temp": 1148190736,
+        "front_motor_temp": 1155530768
+      },
+      "devices": {
+        "battery_max_temp": 1095,
+        "battery_min_temp": 1095
+      }
+    },
+    {
       "id": "dilink40-battery-temp",
       "match": {
         "dilink_version": "4.0"
