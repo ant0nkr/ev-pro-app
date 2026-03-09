@@ -84,6 +84,16 @@
       }
     },
     {
+      "id": "denza-1.2",
+      "match": {
+        "second_chip": "1.2"
+      },
+      "fids": {
+        "front_motor_temp": 1155530768
+      },
+      "devices": {}
+    },
+    {
       "id": "dilink40-battery-temp",
       "match": {
         "dilink_version": "4.0"
