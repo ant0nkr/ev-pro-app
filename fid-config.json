@@ -89,9 +89,14 @@
         "second_chip": "1.2"
       },
       "fids": {
+        "battery_max_temp": 1148190752,
+        "battery_min_temp": 1148190736,
         "front_motor_temp": 1155530768
       },
-      "devices": {}
+      "devices": {
+        "battery_max_temp": 1095,
+        "battery_min_temp": 1095
+      }
     },
     {
       "id": "dilink40-battery-temp",
