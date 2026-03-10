@@ -85,7 +85,7 @@ After the wake phrase is recognized, you have 7 seconds to say a command. If the
 
 ## Voice Commands
 
-28 commands across seven categories. Each works in both English and Ukrainian.
+35 commands across seven categories. Each works in both English and Ukrainian.
 
 ### Climate
 
@@ -154,6 +154,16 @@ After the wake phrase is recognized, you have 7 seconds to say a command. If the
 
 > [!NOTE]
 > App launch commands require a default navigation or music app to be configured in **Settings > Default Navigation** / **Default Music**.
+
+---
+
+## Disabling Commands
+
+Individual voice commands can be disabled from **Settings → Voice Assistant → Commands**. Each command has a toggle switch — switching it off removes the command from recognition entirely. Disabled commands are shown grayed out and are not matched even if the phrase is spoken.
+
+This is useful for commands you never use (e.g., "launch music" if no music app is configured) to reduce accidental matches.
+
+Changes take effect immediately — no need to restart the voice assistant.
 
 ---
 

@@ -19,9 +19,10 @@ Because rules only fire on state transitions, they cannot trigger repeatedly in 
 
 | State | Description |
 |---|---|
+| ON | ACC or READY — fires on either transition (recommended for most rules) |
 | OFF | Car powered off |
-| ACC | Accessory mode (electronics on, not driving) |
-| READY | Ready to drive / actively driving |
+| ACC | Accessory mode only |
+| READY | Ready to drive only |
 
 ---
 
@@ -34,7 +35,7 @@ Each automation rule contains:
 | **Name** | Your label for the rule (e.g., "Cold morning comfort") |
 | **Enabled** | Toggle on/off — disabled rules are skipped |
 | **Condition** | A sensor, an operator, and a threshold value |
-| **Fire when** | The vehicle state that must be entered for the rule to trigger |
+| **Fire when** | The vehicle state that must be entered for the rule to trigger. Choose **ON** to fire on ACC or READY (handles vehicles that stay in ACC) |
 | **Action** | The vehicle command to execute |
 | **Duration** | Optional auto-revert timer (0 = permanent) |
 
@@ -83,6 +84,24 @@ Each automation rule contains:
 | Front defrost OFF | Disables front defrost | No |
 | Rear defrost ON | Enables rear defrost | Yes |
 | Rear defrost OFF | Disables rear defrost | No |
+
+### Seats
+
+| Action | Description | Can Auto-Revert |
+|---|---|---|
+| Driver seat heat Level 1 | Seat heat low | Yes |
+| Driver seat heat Level 2 | Seat heat medium | Yes |
+| Driver seat heat Level 3 | Seat heat high (select models) | Yes |
+| Driver seat heat Off | Turn off seat heat | No |
+| Driver seat vent Level 1 | Seat ventilation low | Yes |
+| Driver seat vent Level 2 | Seat ventilation medium | Yes |
+| Driver seat vent Level 3 | Seat ventilation high (select models) | Yes |
+| Driver seat vent Off | Turn off seat ventilation | No |
+| Passenger seat heat Level 1–3 / Off | Same as driver, passenger side | Yes/No |
+| Passenger seat vent Level 1–3 / Off | Same as driver, passenger side | Yes/No |
+| Steering wheel heat Level 1 | Steering heat on | Yes |
+| Steering wheel heat Level 2 | Steering heat high (select models) | Yes |
+| Steering wheel heat Off | Turn off steering heat | No |
 
 ### Doors
 
@@ -138,6 +157,24 @@ When you set a duration on a rule, the action is automatically reversed after th
 
 ---
 
+## Predefined Rules
+
+The app includes several ready-to-use rules that are pre-installed in disabled state. Enable them in the Automation screen with a single tap.
+
+| Name | Condition | Fire When | Action | Duration |
+|---|---|---|---|---|
+| Winter: Steering wheel heat | Outside temp < 0 °C | ON | Steering wheel heat on | Permanent |
+| Winter: Driver seat heat Lvl 2 | Outside temp < 0 °C | ON | Driver seat heat Level 2 | 10 min |
+| Winter: Passenger seat heat Lvl 2 | Outside temp < 0 °C | ON | Passenger seat heat Level 2 | 10 min |
+| Summer: Driver seat vent Lvl 2 | Inside temp > 15 °C | ON | Driver seat vent Level 2 | Permanent |
+| Summer: Passenger seat vent Lvl 2 | Inside temp > 15 °C | ON | Passenger seat vent Level 2 | Permanent |
+| Open sunshade on start | Outside temp > 0 °C | ON | Open sunshade | Permanent |
+
+> [!NOTE]
+> Predefined rules are seeded once when first installed. They start **disabled** — enable the ones you want.
+
+---
+
 ## Creating a Rule
 
 1. Tap the **+** button on the Automation screen.
@@ -145,7 +182,7 @@ When you set a duration on a rule, the action is automatically reversed after th
 3. Select a sensor (e.g., "Outside temperature").
 4. Choose an operator (e.g., `<`).
 5. Enter a threshold value (e.g., `5`).
-6. Select the **Fire when** vehicle state (e.g., READY).
+6. Select the **Fire when** state. Choose **ON** for most rules — it fires when the car becomes active (ACC or READY).
 7. Choose an action (e.g., "Turn on A/C (Auto)").
 8. Optionally set a duration (e.g., 10 min).
 9. Tap **Save**.
@@ -158,9 +195,9 @@ The rule takes effect immediately on the next qualifying state transition.
 
 | Name | Condition | Fire When | Action | Duration |
 |---|---|---|---|---|
-| Cold morning comfort | Outside temp < 5 C | READY | Turn on A/C (Auto) | 10 min |
+| Cold morning comfort | Outside temp < 5 °C | ON | Turn on A/C (Auto) | 10 min |
 | Night lock | Vehicle state == 0 | OFF | Lock doors | Permanent |
-| Summer ventilation | Inside temp > 35 C | READY | Open all windows | 5 min |
+| Summer ventilation | Inside temp > 35 °C | ON | Open all windows | 5 min |
 | Charge alert | SOC >= 80 | OFF | Unlock doors | Permanent |
 
 ---

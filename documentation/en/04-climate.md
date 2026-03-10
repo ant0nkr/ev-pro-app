@@ -43,18 +43,16 @@ Fan speed and wind mode controls are grayed out when Auto Mode is active.
 
 ## Comfort Controls
 
-> [!WARNING]
-> BYD uses non-standard behavior for some comfort controls:
-> - **Steering wheel heat** is inverted: the underlying values are opposite to what you might expect, but the app handles this — you always see a simple On/Off toggle.
-> - **Seat heat and ventilation** have two intensity levels (Level 1 and Level 2), not three.
+> [!NOTE]
+> Steering wheel heat and seat controls adapt to your vehicle's supported levels. Most vehicles support 2 levels; select models (Sea Lion 05/06, Seal 05/06 GT, Dolphin 25, Seagull 25) support 3 levels for seat heat and ventilation, and 2 levels for steering wheel heat.
 
 | Control | Levels |
 |---|---|
-| Steering Wheel Heat | Off / On |
-| Driver Seat Heat | Off / Level 1 / Level 2 |
-| Driver Seat Ventilation | Off / Level 1 / Level 2 |
-| Passenger Seat Heat | Off / Level 1 / Level 2 |
-| Passenger Seat Ventilation | Off / Level 1 / Level 2 |
+| Steering Wheel Heat | Off / On (most models) or Off / Level 1 / Level 2 (select models) |
+| Driver Seat Heat | Off / Level 1 / Level 2 (most models) or Off / Level 1 / Level 2 / Level 3 (select models) |
+| Driver Seat Ventilation | Off / Level 1 / Level 2 (most models) or Off / Level 1 / Level 2 / Level 3 (select models) |
+| Passenger Seat Heat | Off / Level 1 / Level 2 (most models) or Off / Level 1 / Level 2 / Level 3 (select models) |
+| Passenger Seat Ventilation | Off / Level 1 / Level 2 (most models) or Off / Level 1 / Level 2 / Level 3 (select models) |
 
 > [!NOTE]
 > Seat heat and ventilation are mutually exclusive per seat. Activating heat on a seat automatically turns off ventilation for that seat, and vice versa.
