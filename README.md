@@ -7,11 +7,11 @@ Runs directly on the head unit — no OBD adapter, no Bluetooth, no paired phone
 ## Features
 
 - **Dashboard** — Real-time SOC, power flow, range, voltage, current, motor temps, cell voltage spread
-- **Climate Control** — Full HVAC: AC, temperature, seat heat/vent, steering wheel heat, defrost
+- **Climate Control** — Full HVAC: AC, temperature, seat heat/vent (up to 3 levels on select models), steering wheel heat, defrost
 - **Charging Tracking** — Automatic session detection with SOC, energy, duration, avg speed
 - **Trip History** — Per-ignition-cycle records: distance, energy, efficiency, avg speed
-- **Automation** — IF/THEN rules triggered on vehicle state transitions (OFF/ACC/READY)
-- **Voice Assistant** — 26 bilingual (EN/UK) commands via ElevenLabs STT/TTS
+- **Automation** — IF/THEN rules triggered on vehicle state transitions; includes predefined winter/summer comfort rules
+- **Voice Assistant** — 35 bilingual (EN/UK) commands via VOSK (offline) or ElevenLabs (cloud); per-command enable/disable
 - **Quick Actions Overlay** — Floating pill with one-tap climate and seat controls
 - **Diagnostic Export** — Full diagnostic bundle for troubleshooting
 
@@ -34,7 +34,7 @@ Full user documentation is available in two languages:
 | 05 | [Charging](documentation/en/05-charging.md) | [Зарядка](documentation/ua/05-charging.md) | Session tracking |
 | 06 | [Trip History](documentation/en/06-trip-history.md) | [Поїздки](documentation/ua/06-trip-history.md) | Trip records |
 | 07 | [Automation](documentation/en/07-automation.md) | [Автоматизація](documentation/ua/07-automation.md) | Rules, sensors, actions |
-| 08 | [Voice Assistant](documentation/en/08-voice-assistant.md) | [Голосовий асистент](documentation/ua/08-voice-assistant.md) | 26 commands, PTT |
+| 08 | [Voice Assistant](documentation/en/08-voice-assistant.md) | [Голосовий асистент](documentation/ua/08-voice-assistant.md) | 35 commands, VOSK/ElevenLabs, PTT |
 | 09 | [Quick Actions](documentation/en/09-quick-actions.md) | [Швидкі дії](documentation/ua/09-quick-actions.md) | Floating overlay |
 | 10 | [Settings](documentation/en/10-settings.md) | [Налаштування](documentation/ua/10-settings.md) | All settings |
 | 11 | [Diagnostics](documentation/en/11-diagnostics.md) | [Діагностика](documentation/ua/11-diagnostics.md) | Log viewer, export |
