@@ -32,6 +32,7 @@ BYD EV Pro targets BYD vehicles running DiLink 3.0 through 6.0. The app reads th
 |---|
 | Han, Tang |
 | Song+, Frigate, Seal |
+| **Song Plus 2024** |
 
 ### DiLink 5.0 (Android 12L)
 
@@ -43,7 +44,7 @@ BYD EV Pro targets BYD vehicles running DiLink 3.0 through 6.0. The app reads th
 | Ocean |
 | **Sea Lion 05 EV/DM-i, Seal 05/06 GT, Dolphin 25, Seagull 25** *(sensor compatibility improved in 1.0.2)* |
 | Yuan Plus 25, Yuan Up 25, Song Pro 25, Qin Plus 25 |
-| E7, Han, Tang, Song L, Seal, Sea Lion 07 |
+| E7, Han, Tang, Song L, Seal, Sea Lion 07, **Sea Lion 06 EV** |
 | **Song Plus** (primary test vehicle) |
 
 ### DiLink 5.1 (Android 14)
@@ -77,7 +78,9 @@ BYD EV Pro targets BYD vehicles running DiLink 3.0 through 6.0. The app reads th
 ## Compatibility Notes by Version
 
 ### 1.0.2
-- **Sea Lion 05 / Seagull 25 / Seal 05 / Dolphin 25** (firmware chipset 23, variant 1.22): Fixed firmware detection timing that could show "DiLink unknown" on first connect. Corrected battery voltage, battery current, and motor temperature sensor readings. These models are rear-wheel drive single-motor; the motor temperature display now reads the correct (rear) motor.
+- **Sea Lion 05 / Seagull 25 / Seal 05 / Dolphin 25**: Fixed firmware detection timing that could show "DiLink unknown" on first connect. Corrected battery voltage, battery current, and motor temperature sensor readings. These models are rear-wheel drive single-motor; the motor temperature display now reads the correct (rear) motor.
+- **Song Plus 2024 / DiLink 4.0**: Fixed battery temperature sensor — values now display correctly (previously showed incorrect readings ten times too high).
+- **All models**: Battery temperature accuracy improvements for additional vehicle variants.
 
 ---
 
