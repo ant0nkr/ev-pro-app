@@ -6,14 +6,24 @@ Runs directly on the head unit — no OBD adapter, no Bluetooth, no paired phone
 
 ## Features
 
+### Free
+
 - **Dashboard** — Real-time SOC, power flow, range, voltage, current, motor temps, cell voltage spread
-- **Climate Control** — Full HVAC: AC, temperature, seat heat/vent (up to 3 levels on select models), steering wheel heat, defrost
 - **Charging Tracking** — Automatic session detection with SOC, energy, duration, avg speed
 - **Trip History** — Per-ignition-cycle records: distance, energy, efficiency, avg speed
 - **Automation** — IF/THEN rules triggered on vehicle state transitions; includes predefined winter/summer comfort rules
 - **Voice Assistant** — 35 bilingual (EN/UK) commands via VOSK (offline) or ElevenLabs (cloud); per-command enable/disable
 - **Quick Actions Overlay** — Floating pill with one-tap climate and seat controls
 - **Diagnostic Export** — Full diagnostic bundle for troubleshooting
+
+### Subscription (7-day free trial)
+
+- **Telegram Notifications** — Automatic alerts for charging events, gun connection, trip summaries; bot registration with multi-user support
+- **Home Assistant Integration** — Push live vehicle sensors to HA via webhook; voice-triggered HA service calls; HACS custom component included
+- **WiFi / 4G Keep-Alive** — Automatically re-enables WiFi and mobile data after ignition off (useful for remote monitoring)
+- **Remote Commands** — Execute vehicle commands remotely via Telegram bot
+
+Activate the trial from the **About** tab in the app. No payment required for the first 7 days.
 
 ## Supported Vehicles
 
@@ -40,6 +50,18 @@ Full user documentation is available in two languages:
 | 11 | [Diagnostics](documentation/en/11-diagnostics.md) | [Діагностика](documentation/ua/11-diagnostics.md) | Log viewer, export |
 | 12 | [Compatibility](documentation/en/12-compatibility.md) | [Сумісність](documentation/ua/12-compatibility.md) | Supported models |
 | 13 | [Troubleshooting](documentation/en/13-troubleshooting.md) | [Вирішення проблем](documentation/ua/13-troubleshooting.md) | Common issues |
+
+## Home Assistant (HACS)
+
+A custom component is included in this repository for Home Assistant integration. To install:
+
+1. Open HACS in Home Assistant
+2. Go to Integrations → Custom repositories
+3. Add `ant0nkr/ev-pro-app` with category **Integration**
+4. Install **BYD EV Pro** and restart Home Assistant
+5. Configure the webhook URL and access token in the integration settings
+
+Requires an active subscription in the app.
 
 ## Releases
 
