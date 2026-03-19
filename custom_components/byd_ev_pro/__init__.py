@@ -89,27 +89,36 @@ async def _handle_webhook(
         signature_valid = True
 
     data = hass.data[DOMAIN][entry.entry_id]
+    changed = False
 
-    # Update sensor data.
+    # Update sensor data — only flag changed if values actually differ.
     sensors = payload.get("sensors")
-    if isinstance(sensors, dict):
-        data["sensors"].update(sensors)
+    if isinstance(sensors, dict) and sensors:
+        for key, value in sensors.items():
+            if data["sensors"].get(key) != value:
+                data["sensors"][key] = value
+                changed = True
 
     # Update location.
     location = payload.get("location")
-    if isinstance(location, dict):
-        data["location"].update(location)
+    if isinstance(location, dict) and location:
+        for key, value in location.items():
+            if data["location"].get(key) != value:
+                data["location"][key] = value
+                changed = True
 
     # Update device info and device registry.
     device_info = payload.get("device_info")
-    if isinstance(device_info, dict):
+    if isinstance(device_info, dict) and device_info:
         data["device_info"].update(device_info)
         _update_device_registry(hass, entry, device_info)
+        changed = True
 
-    # Notify entities to update.
-    from homeassistant.helpers.dispatcher import async_dispatcher_send
+    # Notify entities only when data actually changed.
+    if changed:
+        from homeassistant.helpers.dispatcher import async_dispatcher_send
 
-    async_dispatcher_send(hass, f"{DOMAIN}_{entry.entry_id}_update")
+        async_dispatcher_send(hass, f"{DOMAIN}_{entry.entry_id}_update")
 
     # Build response — include config only if HMAC signature is valid.
     response: dict[str, Any] = {"status": "ok"}
