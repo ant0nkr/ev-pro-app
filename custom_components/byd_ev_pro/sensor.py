@@ -24,6 +24,8 @@ from .const import (
     CHARGING_STATE_MAP,
     GUN_STATE_MAP,
     AC_POWER_MAP,
+    SEAT_HEAT_MAP,
+    STEERING_HEAT_MAP,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -34,6 +36,8 @@ _STATE_MAP_SENSORS: dict[str, dict[int, str]] = {
     "charging_state": CHARGING_STATE_MAP,
     "charging_gun": GUN_STATE_MAP,
     "ac_power": AC_POWER_MAP,
+    "driver_seat_heat": SEAT_HEAT_MAP,
+    "steering_heat": STEERING_HEAT_MAP,
 }
 
 # Map string names to HA enums.
@@ -60,8 +64,8 @@ async def async_setup_entry(
 ) -> None:
     """Set up BYD EV Pro sensor entities."""
     entities = [
-        BydEvProSensor(hass, entry, key, name, device_class, unit, state_class, icon)
-        for key, name, device_class, unit, state_class, icon in SENSOR_DEFINITIONS
+        BydEvProSensor(hass, entry, key, name, device_class, unit, state_class, icon, precision)
+        for key, name, device_class, unit, state_class, icon, precision in SENSOR_DEFINITIONS
     ]
     async_add_entities(entities)
 
@@ -81,6 +85,7 @@ class BydEvProSensor(SensorEntity):
         unit: str | None,
         state_class: str | None,
         icon: str | None,
+        precision: int | None = None,
     ) -> None:
         self._hass = hass
         self._entry = entry
@@ -95,6 +100,8 @@ class BydEvProSensor(SensorEntity):
             self._attr_native_unit_of_measurement = unit
         if state_class and state_class in _STATE_CLASS_MAP:
             self._attr_state_class = _STATE_CLASS_MAP[state_class]
+        if precision is not None:
+            self._attr_suggested_display_precision = precision
 
     @property
     def device_info(self) -> DeviceInfo:
