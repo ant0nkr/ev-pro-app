@@ -76,13 +76,47 @@ This page covers common problems, their causes, and solutions. For issues not li
 
 ---
 
+## Telegram Bot
+
+| Problem | Likely Cause | Solution |
+|---|---|---|
+| Cannot access Telegram settings | Feature not unlocked | Telegram integration requires the Extended version. Check your subscription status in About. |
+| Bot not responding to commands | Bot not connected or relay offline | Open **Settings > Telegram Bot** and check that the bot is connected. Try disconnecting and reconnecting. |
+| `/report` shows stale data | Vehicle is OFF | Status reports use the last known sensor values. Start the car to get fresh data. |
+
+---
+
+## Home Assistant
+
+| Problem | Likely Cause | Solution |
+|---|---|---|
+| Cannot access HA settings | Feature not unlocked | Home Assistant integration requires the Extended version. Check your subscription status in About. |
+| Sensors show "unavailable" | Webhook not configured or car is OFF | Verify the webhook URL in both the app and HA. Sensors update only when the car pushes data. |
+| Location not updating | GPS not available | GPS data is pushed alongside sensor data. Location updates when the car is ON and has a GPS fix. |
+
+---
+
+## Debug Control Panel
+
+| Problem | Likely Cause | Solution |
+|---|---|---|
+| All actions show "No Readback" | Vehicle is OFF | The Debug Panel requires the car to be in ACC or READY state. |
+| Action shows "Mismatch" | Feature ID not correct for your model | Export a diagnostic bundle and report to the developer. A remote FID config update may be needed. |
+| Action shows "Failed" | Connection lost or service unavailable | Check the connection indicator. Try reconnecting the app. |
+
+> [!TIP]
+> Use the Debug Control Panel (**Settings > View Logs > bug icon**) to see what your car actually reports before sending a bug report. This helps the developer diagnose issues faster.
+
+---
+
 ## Collecting Debug Information
 
 When a problem cannot be resolved using the steps above:
 
 1. Open the **Logs** tab and look for red (Error) or dark-red (Critical) entries.
-2. Go to **Settings > Export Diagnostic Bundle** — this saves a comprehensive snapshot to the device.
-3. Use **Settings > Send Detailed Report** to send the bundle to the developer via Telegram.
+2. Use the **Debug Control Panel** (Settings > View Logs > bug icon) to check if specific controls work and what the car reports.
+3. Go to **Settings > Export Diagnostic Bundle** — this saves a comprehensive snapshot to the device.
+4. Use **Settings > Send Detailed Report** to send the bundle to the developer via Telegram.
 
 The diagnostic bundle contains sensor data, configuration, and recent log entries — everything needed to diagnose the issue remotely.
 

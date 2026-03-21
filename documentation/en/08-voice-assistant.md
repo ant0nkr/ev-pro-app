@@ -85,7 +85,7 @@ After the wake phrase is recognized, you have 7 seconds to say a command. If the
 
 ## Voice Commands
 
-35 commands across seven categories. Each works in both English and Ukrainian.
+36 commands across eight categories. Each works in both English and Ukrainian.
 
 ### Climate
 
@@ -95,6 +95,16 @@ After the wake phrase is recognized, you have 7 seconds to say a command. If the
 | "turn off climate", "ac off", "climate off" | "вимкни клiмат", "виключи клiмат" | A/C off |
 | "heat steering wheel", "steering heat on", "warm steering wheel" | "ввiмкни пiдiгрiв керма", "нагрiй кермо" | Steering wheel heat on |
 | "steering heat off", "stop heating steering wheel" | "вимкни пiдiгрiв керма" | Steering wheel heat off |
+| "set temperature [16–32]", "set driver temperature [16–32]" | "встанови температуру [16–32]", "постав [16–32] градусiв" | Set driver temperature (°C) |
+| "set passenger temperature [16–32]" | "встанови температуру пасажира [16–32]" | Set passenger temperature (°C) |
+| "heat driver seat", "warm my seat" | "нагрiй моє сидiння", "пiдiгрiв водiйського сидiння" | Driver seat heat on |
+| "stop heating driver seat" | "вимкни пiдiгрiв водiйського сидiння" | Driver seat heat off |
+| "heat passenger seat" | "нагрiй пасажирське сидiння" | Passenger seat heat on |
+| "stop heating passenger seat" | "вимкни пiдiгрiв пасажирського сидiння" | Passenger seat heat off |
+| "vent driver seat", "cool my seat" | "провiтри моє сидiння", "вентиляцiя водiйського сидiння" | Driver seat vent on |
+| "stop venting driver seat" | "вимкни вентиляцiю водiйського сидiння" | Driver seat vent off |
+| "vent passenger seat" | "провiтри пасажирське сидiння" | Passenger seat vent on |
+| "stop venting passenger seat" | "вимкни вентиляцiю пасажирського сидiння" | Passenger seat vent off |
 
 ### Windows (All)
 
@@ -216,3 +226,4 @@ When using ElevenLabs, you can set a custom voice ID in **Settings > TTS Voice I
 - [Quick Actions Overlay](09-quick-actions.md)
 - [Climate](04-climate.md)
 - [Settings](10-settings.md)
+- [Home Assistant](15-home-assistant.md)

@@ -61,6 +61,39 @@ Entries are shown newest-first.
 
 ---
 
+## Debug Control Panel
+
+The Debug Control Panel is a diagnostic tool for verifying that vehicle commands actually reach the car and checking what values the car reports back. It is useful when a control (e.g., seat heat, trunk, defrost) does not seem to work — you can see whether the command was sent successfully and what the car responded with.
+
+**How to open:** Go to **Settings > View Logs**, then tap the bug icon in the top-right corner of the Logs screen.
+
+**What it shows:**
+
+The panel lists every controllable action grouped by category (climate, doors, windows, sunroof, sunshade, trunk). For each action you can:
+
+1. **Send** the command to the car
+2. **Read back** the current value the car reports for that feature
+
+**Result indicators:**
+
+| Indicator | Meaning |
+|---|---|
+| **Verified (OK)** — green | Command sent and readback matches the expected value. The car accepted the command. |
+| **Mismatch** — orange | Command sent but readback returned a different value. The car may not support this action or the feature ID may need an override for your model. |
+| **No Readback (N/A)** — grey | Command sent but the car returned an error code. The feature may not be available on your vehicle. |
+| **Failed (FAIL)** — red | The SET command itself failed to send. |
+
+**When to use:**
+
+- A climate or vehicle control doesn't seem to respond — use the Debug Panel to check if the command reaches the car
+- You want to see the actual raw status values your car reports before sending a diagnostic report to the developer
+- After a FID config update, to verify that overrides are applied correctly for your model
+
+> [!NOTE]
+> The Debug Control Panel sends real commands to the car. Use it while the vehicle is in ACC or READY state.
+
+---
+
 ## Log Storage
 
 The app keeps the last 500 entries in memory (visible in the Logs tab) and also writes daily log files to the device.

@@ -30,7 +30,7 @@ The Settings screen is the last tab in the navigation bar. It is organized into 
 | Your Name | (empty) | Optional. When set, voice confirmations are personalized (e.g., "Hi Anton, turning on climate"). |
 | TTS Voice ID | (empty) | ElevenLabs voice ID for custom TTS output. Leave empty to use the default voice. |
 
-See [Voice Assistant](08-voice-assistant.md) for the full list of 28 supported commands.
+See [Voice Assistant](08-voice-assistant.md) for the full list of 36 supported commands.
 
 ---
 
@@ -51,9 +51,22 @@ See [Voice Assistant](08-voice-assistant.md) for the full list of 28 supported c
 | Export Diagnostic Bundle | Saves a comprehensive diagnostic JSON file to the device. Useful for reporting issues. |
 | Send Brief Report | Sends a text summary of recent activity to the developer via Telegram. |
 | Send Detailed Report | Sends the full diagnostic bundle and recent logs to the developer via Telegram. Use this when investigating specific issues. |
+| Refresh FID Config | Force re-download of remote sensor compatibility rules. Use this after the developer publishes a fix for your vehicle model. |
 
 > [!NOTE]
 > The diagnostic bundle is the primary tool for investigating vehicle-specific issues. Include it when reporting a problem.
+
+---
+
+## Integrations
+
+| Action | Description |
+|---|---|
+| Telegram Bot | Connect the app to a Telegram bot for remote status, battery details, camera, and log uploads. Opens the Telegram configuration screen. See [Telegram](14-telegram.md). |
+| Home Assistant | Configure webhook sync to push vehicle telemetry to Home Assistant in real time. Opens the Home Assistant settings screen. See [Home Assistant](15-home-assistant.md). |
+
+> [!NOTE]
+> Telegram and Home Assistant integrations are available in the **Extended version** only (requires an active subscription or trial).
 
 ---
 
@@ -84,6 +97,8 @@ This section is read-only. It displays information about your head unit and vehi
 |---|---|
 | App version | Current installed version |
 | Developer | Anton Kramskyi |
+| Installation ID | Unique identifier for your app instance (UUID). Tap to copy. Used for support and log correlation. |
+| FID Config | Shows the current remote config version, rule count, and last fetch date. |
 | Donation QR | Monobank donation link displayed as a QR code at the bottom of the Settings screen |
 
 ---
@@ -93,3 +108,5 @@ This section is read-only. It displays information about your head unit and vehi
 - [Voice Assistant](08-voice-assistant.md)
 - [Quick Actions](09-quick-actions.md)
 - [Diagnostics](11-diagnostics.md)
+- [Telegram](14-telegram.md)
+- [Home Assistant](15-home-assistant.md)
