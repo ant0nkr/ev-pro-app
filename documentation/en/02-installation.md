@@ -8,7 +8,7 @@ This guide covers installing BYD EV Pro on a BYD DiLink head unit.
 
 - A BYD vehicle with DiLink 3.0, 4.0, 5.0, 5.1, or 6.0. See [Compatibility](12-compatibility.md) for confirmed models.
 - ADB access enabled on the head unit.
-- The APK file: `byd_ev_pro.apk` (approximately 19 MB).
+- The APK file: `byd_ev_pro.apk` (approximately 80 MB).
 
 ---
 
