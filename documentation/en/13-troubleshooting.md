@@ -10,8 +10,7 @@ This page covers common problems, their causes, and solutions. For issues not li
 |---|---|---|
 | Connection indicator stays grey | ADB not enabled on the head unit | Enable ADB in Developer Options. See [Installation](02-installation.md). |
 | Connection indicator stays blue (pulsing) | Connection key not trusted | Accept the "Allow USB debugging?" dialog on the head unit. If no dialog appears, try restarting the app. |
-| Connection indicator turns red | Vehicle service is temporarily unavailable | Restart the app. If the problem persists, try enabling **Legacy Connection** in Settings. |
-| Need to use Legacy Connection mode | Default connection method incompatible with your firmware | Enable **Settings > Legacy Connection**. This uses a slower but more compatible connection path. |
+| Connection indicator turns red | Vehicle service is temporarily unavailable | Restart the app. If the problem persists, try rebooting the head unit. |
 
 > [!NOTE]
 > Connection indicator colors: grey = not connected, blue/pulsing = connecting, green = fully connected, red = error.
@@ -53,7 +52,7 @@ This page covers common problems, their causes, and solutions. For issues not li
 
 | Problem | Likely Cause | Solution |
 |---|---|---|
-| Voice assistant not responding | API key missing or no internet | Check **Settings > ElevenLabs API Key** is configured. Ensure the head unit has internet access. |
+| Voice assistant not responding | Voice Assistant toggle is off | Check that **Settings > Voice Assistant** is enabled. Ensure either **Listen for Wake Phrase** or **PTT Overlay** is turned on. |
 | Wake phrase not recognized | Speech transcription does not match | Check the Logs tab (Voice category) to see the exact transcript. The app handles common pronunciation variants automatically. Try speaking more clearly or switching to Push-to-Talk mode. |
 | PTT beep not audible | Media volume is muted | Increase media volume on the head unit. The beep uses the same audio channel as music playback. |
 

@@ -1,6 +1,6 @@
 # Settings
 
-The Settings screen is the last tab in the navigation bar. It is organized into sections: Vehicle, Voice Assistant, Appearance, Data, Vehicle Info, and About.
+The Settings screen is organized into sections: Vehicle, Connectivity, Default Apps, Voice Assistant, Appearance, and Diagnostics & Data.
 
 ---
 
@@ -8,13 +8,32 @@ The Settings screen is the last tab in the navigation bar. It is organized into 
 
 | Setting | Default | Description |
 |---|---|---|
-| Battery Capacity | 87.4 kWh | Usable battery capacity for energy calculations and range estimation. Adjust this if your vehicle has a different pack size. |
+| Battery Capacity | 87.4 kWh | Usable battery capacity for energy calculations and range estimation. Adjust this if your vehicle has a different pack size. 21 presets available plus custom entry. |
+
+---
+
+## Connectivity
+
+| Setting | Default | Description |
+|---|---|---|
 | Auto-Start | On | Launch the app automatically on system boot and screen-on events. |
-| Legacy Connection | Off | Use an alternative (slower) connection method. Enable this if the default connection fails on your head unit model. |
 | Quick Actions Overlay | Off | Show or hide the floating quick actions pill. See [Quick Actions](09-quick-actions.md). |
-| Bring to Foreground on Wake | Off | When enabled, the app comes to the foreground automatically when the car screen turns on. When disabled, the app continues running in the background without stealing focus. *Since 1.0.2* |
-| Default Navigation | (not set) | Select a navigation app from the list of installed navigation apps. Used by the "launch navigation" voice command. *Since 1.0.2* |
-| Default Music | (not set) | Select a music app from the list of installed music apps. Used by the "launch music" voice command. The selected app will also auto-play when launched. *Since 1.0.2* |
+| Bring to Foreground on Wake | Off | When enabled, the app comes to the foreground automatically when the car screen turns on. |
+| Keep WiFi on ACC Off | Off | Re-enable WiFi automatically after ignition off. *(Extended version)* |
+| Keep Mobile Data on ACC Off | Off | Re-enable mobile data automatically after ignition off. *(Extended version)* |
+| Keep Bluetooth on ACC Off | Off | Re-enable Bluetooth automatically after ignition off. *(Extended version)* |
+| Run While Parked | Off | Keep the app running and polling sensors while the car is parked (OFF state). |
+| Slow Poll Mode | Off | Reduce polling frequency to save resources. Useful when running while parked. |
+| Disable Traffic Monitor | Off | Disable the BYD traffic monitor service that can interfere with connectivity. |
+
+---
+
+## Default Apps
+
+| Setting | Default | Description |
+|---|---|---|
+| Default Navigation | (not set) | Select a navigation app from the list of installed apps. Used by the "launch navigation" voice command. |
+| Default Music | (not set) | Select a music app from the list of installed apps. Used by the "launch music" voice command. The selected app will also auto-play when launched. |
 
 ---
 
@@ -22,13 +41,10 @@ The Settings screen is the last tab in the navigation bar. It is organized into 
 
 | Setting | Default | Description |
 |---|---|---|
-| Voice Assistant | Off | Master enable for all voice functionality. Cannot be turned on without an API key. |
-| Activation Mode | Wake Phrase | **Always Listening** — continuously listens for the wake phrase. **Push to Talk** — activates only when the overlay pill is tapped. |
-| ElevenLabs API Key | (empty) | API key for cloud speech recognition and text-to-speech. Shows "Not set" or "Configured". The key is only sent to ElevenLabs servers. |
-| Recognition Language | Both | **Ukrainian**, **English**, or **Both** (auto-detect). Specifying a single language improves recognition accuracy. |
-| Wake Phrases | "привiт бiуайдi" / "hello byd" | Custom wake phrases for Ukrainian and English. Punctuation is stripped automatically. |
-| Your Name | (empty) | Optional. When set, voice confirmations are personalized (e.g., "Hi Anton, turning on climate"). |
-| TTS Voice ID | (empty) | ElevenLabs voice ID for custom TTS output. Leave empty to use the default voice. |
+| Voice Assistant | Off | Master enable for all voice functionality. |
+| Listen for Wake Phrase | Off | When enabled, continuously listens in the background for the wake phrase. |
+| PTT Overlay | Off | Show a dedicated push-to-talk floating button. Tap to activate voice recognition on demand. |
+| Configure | — | Opens the voice configuration screen: wake phrases, your name, and per-command enable/disable toggles. |
 
 See [Voice Assistant](08-voice-assistant.md) for the full list of 36 supported commands.
 
@@ -39,19 +55,20 @@ See [Voice Assistant](08-voice-assistant.md) for the full list of 36 supported c
 | Setting | Default | Description |
 |---|---|---|
 | Theme | System | **System** — follows Android dark/light mode. **Light** — forces light theme. **Dark** — forces dark theme. Applied immediately. |
-| Language | System | **System** — follows Android locale. **English** — forces English. **Ukrainian** — forces Ukrainian. Also changes the overlay pill label. |
+| Language | System | **System** — follows Android locale. **English** — forces English. **Ukrainian** — forces Ukrainian. Also changes the overlay pill label and voice recognition language. |
 
 ---
 
-## Data
+## Diagnostics & Data
 
 | Action | Description |
 |---|---|
-| Clear Diagnostic Logs | Deletes all log entries from the in-app log viewer. A confirmation dialog is shown. |
-| Export Diagnostic Bundle | Saves a comprehensive diagnostic JSON file to the device. Useful for reporting issues. |
+| View Logs | Opens the log viewer with filterable tabs (All / Voice / DiLink / Auto / Polling / App / Debug). |
+| Clear Diagnostic Logs | Deletes all log entries from the in-app log viewer. |
+| Export Diagnostic Bundle | Saves a comprehensive diagnostic file to the device. |
 | Send Brief Report | Sends a text summary of recent activity to the developer via Telegram. |
-| Send Detailed Report | Sends the full diagnostic bundle and recent logs to the developer via Telegram. Use this when investigating specific issues. |
-| Refresh FID Config | Force re-download of remote sensor compatibility rules. Use this after the developer publishes a fix for your vehicle model. |
+| Send Detailed Report | Sends the full diagnostic bundle and recent logs to the developer via Telegram. |
+| Refresh FID Config | Force re-download of remote sensor compatibility rules. |
 
 > [!NOTE]
 > The diagnostic bundle is the primary tool for investigating vehicle-specific issues. Include it when reporting a problem.
@@ -62,8 +79,8 @@ See [Voice Assistant](08-voice-assistant.md) for the full list of 36 supported c
 
 | Action | Description |
 |---|---|
-| Telegram Bot | Connect the app to a Telegram bot for remote status, battery details, camera, and log uploads. Opens the Telegram configuration screen. See [Telegram](14-telegram.md). |
-| Home Assistant | Configure webhook sync to push vehicle telemetry to Home Assistant in real time. Opens the Home Assistant settings screen. See [Home Assistant](15-home-assistant.md). |
+| Telegram Bot | Connect the app to a Telegram bot for remote status, battery details, camera, and log uploads. See [Telegram](14-telegram.md). |
+| Home Assistant | Configure webhook sync to push vehicle telemetry to Home Assistant in real time. See [Home Assistant](15-home-assistant.md). |
 
 > [!NOTE]
 > Telegram and Home Assistant integrations are available in the **Extended version** only (requires an active subscription or trial).
@@ -81,9 +98,9 @@ This section is read-only. It displays information about your head unit and vehi
 | Vehicle Software | Vehicle software version |
 | MCU Version | MCU firmware version |
 | DiLink Version | DiLink generation and UI version |
-| DiLink Type | DiLink hardware type identifier |
+| Protocol | CAN-FD or CAN 2.0 based on firmware |
+| Drive Type | BEV / HEV / DM-i Plug-in Hybrid |
 | Hardware Version | Hardware revision |
-| Firmware ID | Full firmware identifier string |
 | Car Series | BYD vehicle series (e.g., Ocean, Dynasty) |
 
 > [!NOTE]
@@ -97,9 +114,10 @@ This section is read-only. It displays information about your head unit and vehi
 |---|---|
 | App version | Current installed version |
 | Developer | Anton Kramskyi |
-| Installation ID | Unique identifier for your app instance (UUID). Tap to copy. Used for support and log correlation. |
+| Installation ID | Unique identifier for your app instance (UUID). Tap to copy. |
 | FID Config | Shows the current remote config version, rule count, and last fetch date. |
-| Donation QR | Monobank donation link displayed as a QR code at the bottom of the Settings screen |
+| Subscription | Subscription or trial status, with activate/extend buttons. |
+| Donation QR | Monobank donation link displayed as a QR code. |
 
 ---
 
