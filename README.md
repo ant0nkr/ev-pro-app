@@ -18,8 +18,9 @@ Android-додаток для головних пристроїв BYD DiLink з 
 - **Charging Tracking / Зарядка** — Automatic session detection with SOC, energy, duration, avg speed / Автоматичне відстеження сесій з SOC, енергією, тривалістю, середньою швидкістю
 - **Trip History / Історія поїздок** — Per-ignition-cycle records: distance, energy, efficiency, avg speed / Записи по циклах запалення: відстань, енергія, ефективність, середня швидкість
 - **Automation / Автоматизація** — IF/THEN rules triggered on vehicle state transitions; includes predefined winter/summer comfort rules / Правила ЯКЩО/ТОДІ при зміні стану авто; включає зимові/літні правила комфорту
-- **Voice Assistant / Голосовий помічник** — 35 bilingual (EN/UK) commands via VOSK (offline) or ElevenLabs (cloud) / 35 двомовних команд (EN/UK) через VOSK (офлайн) або ElevenLabs (хмара)
+- **Voice Assistant / Голосовий помічник** — 36 bilingual (EN/UK) commands via VOSK (offline) or ElevenLabs (cloud) / 36 двомовних команд (EN/UK) через VOSK (офлайн) або ElevenLabs (хмара)
 - **Quick Actions Overlay / Швидкі дії** — Floating pill with one-tap climate and seat controls / Плаваюча кнопка з керуванням кліматом та сидіннями
+- **Debug Control Panel / Панель налагодження** — Verify that vehicle commands reach the car and read back actual CAN values / Перевірка, що команди доходять до авто, зчитування фактичних значень CAN
 - **Diagnostic Export / Діагностика** — Full diagnostic bundle for troubleshooting / Повний діагностичний пакет для аналізу
 
 ### Subscription (7-day free trial) / Підписка (7 днів безкоштовно)
@@ -52,12 +53,14 @@ Developed and tested on **BYD Song Plus EV 2025** (DiLink 5.0). Compatible with 
 | 05 | [Charging](documentation/en/05-charging.md) | [Зарядка](documentation/ua/05-charging.md) | Session tracking / Відстеження сесій |
 | 06 | [Trip History](documentation/en/06-trip-history.md) | [Поїздки](documentation/ua/06-trip-history.md) | Trip records / Записи поїздок |
 | 07 | [Automation](documentation/en/07-automation.md) | [Автоматизація](documentation/ua/07-automation.md) | Rules, sensors, actions / Правила, датчики, дії |
-| 08 | [Voice Assistant](documentation/en/08-voice-assistant.md) | [Голосовий асистент](documentation/ua/08-voice-assistant.md) | 35 commands, VOSK/ElevenLabs, PTT / 35 команд |
+| 08 | [Voice Assistant](documentation/en/08-voice-assistant.md) | [Голосовий асистент](documentation/ua/08-voice-assistant.md) | 36 commands, VOSK/ElevenLabs, PTT / 36 команд |
 | 09 | [Quick Actions](documentation/en/09-quick-actions.md) | [Швидкі дії](documentation/ua/09-quick-actions.md) | Floating overlay / Плаваюча панель |
 | 10 | [Settings](documentation/en/10-settings.md) | [Налаштування](documentation/ua/10-settings.md) | All settings / Усі налаштування |
-| 11 | [Diagnostics](documentation/en/11-diagnostics.md) | [Діагностика](documentation/ua/11-diagnostics.md) | Log viewer, export / Перегляд логів, експорт |
+| 11 | [Diagnostics](documentation/en/11-diagnostics.md) | [Діагностика](documentation/ua/11-diagnostics.md) | Log viewer, debug panel, export / Перегляд логів, панель налагодження, експорт |
 | 12 | [Compatibility](documentation/en/12-compatibility.md) | [Сумісність](documentation/ua/12-compatibility.md) | Supported models / Підтримувані моделі |
 | 13 | [Troubleshooting](documentation/en/13-troubleshooting.md) | [Вирішення проблем](documentation/ua/13-troubleshooting.md) | Common issues / Поширені проблеми |
+| 14 | [Telegram](documentation/en/14-telegram.md) | [Telegram](documentation/ua/14-telegram.md) | Telegram bot integration / Інтеграція з Telegram-ботом |
+| 15 | [Home Assistant](documentation/en/15-home-assistant.md) | [Home Assistant](documentation/ua/15-home-assistant.md) | HA webhook integration / Інтеграція з HA через webhook |
 
 ## Home Assistant (HACS)
 

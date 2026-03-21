@@ -1,0 +1,11 @@
+{
+  "domain": "byd_ev_pro",
+  "name": "BYD EV Pro",
+  "version": "1.0.0",
+  "codeowners": ["@ant0nkr"],
+  "config_flow": true,
+  "dependencies": ["webhook"],
+  "documentation": "https://github.com/ant0nkr/ha-byd-ev-pro",
+  "iot_class": "cloud_push",
+  "requirements": []
+}
