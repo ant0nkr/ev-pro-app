@@ -34,6 +34,8 @@ The app logs events from the following areas:
 | DiLink | Connection status, vehicle data reads/writes |
 | Polling | Sensor scheduling, timeouts, data filtering |
 | Voice | Speech recognition, wake phrase, command matching |
+| Automation | Rule triggers, action execution, auto-revert |
+| Debug | Debug Control Panel commands and readback results |
 
 ---
 
@@ -44,7 +46,7 @@ The Logs screen provides filtered access to the log buffer.
 **Filter bar:**
 
 - **Row 1 — Severity chips:** All, Info, Warning, Error, Critical
-- **Row 2 — Category chips:** All, Polling, App, DiLink, Voice
+- **Row 2 — Category tabs:** All, Voice, DiLink, Auto, Polling, App, Debug
 
 Both rows are sticky at the top of the screen.
 

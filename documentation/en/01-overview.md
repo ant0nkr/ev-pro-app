@@ -14,7 +14,8 @@ BYD EV Pro is an Android application designed to run directly on BYD DiLink in-c
 - **Charging Session Tracking** — Automatic detection and logging of every charge event with start/end SOC, energy added (kWh), duration, and average charging speed.
 - **Trip History** — Per-session trip records: distance, energy consumed, efficiency (kWh/100 km), and session duration.
 - **Automation Engine** — IF/THEN rule system triggered on vehicle state transitions (OFF / ACC / READY). Supports optional auto-revert after a configurable duration.
-- **Voice Assistant** — 36 bilingual (English/Ukrainian) voice commands using VOSK (offline, default) or ElevenLabs (cloud) with wake-word activation or push-to-talk. See [Voice Assistant](08-voice-assistant.md).
+- **Voice Assistant** — 36 bilingual (English/Ukrainian) voice commands using VOSK offline speech recognition with wake-word activation or push-to-talk. See [Voice Assistant](08-voice-assistant.md).
+- **Bluetooth** — *(Feature in development)*
 - **Quick Actions Floating Overlay** — Always-on-top draggable pill that expands into a button grid for A/C, wheel heat, defrost, and seat controls — accessible from any screen. See [Quick Actions](09-quick-actions.md).
 - **Debug Control Panel** — Developer tool for verifying that vehicle commands reach the car and reading back actual CAN values. Useful for diagnosing controls that don't seem to work. See [Diagnostics](11-diagnostics.md).
 - **Telegram Bot** — Connect the app to a Telegram bot for remote vehicle status reports, battery details, camera snapshots, and diagnostic log uploads. See [Telegram](14-telegram.md).
@@ -25,7 +26,7 @@ BYD EV Pro is an Android application designed to run directly on BYD DiLink in-c
 
 ## Languages
 
-The app is fully bilingual: **English** and **Ukrainian**. Language selection is available in Settings and persists across sessions. Voice assistant commands and TTS responses are also bilingual.
+The app is fully bilingual: **English** and **Ukrainian**. Language selection is available in Settings and persists across sessions. Voice assistant commands are also bilingual.
 
 ---
 
@@ -37,7 +38,7 @@ The app is fully bilingual: **English** and **Ukrainian**. Language selection is
 | Use Bluetooth | No BLE pairing or scanning is involved |
 | Run on iOS or desktop | Android-only; designed for BYD DiLink head units |
 | Run on a paired phone | The app runs on the head unit itself |
-| Require a cloud account | No account, no login, no mandatory internet connection (except for voice assistant, Telegram, and Home Assistant) |
+| Require a cloud account | No account, no login, no mandatory internet connection (except for Telegram and Home Assistant) |
 
 ---
 

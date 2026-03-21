@@ -1,57 +1,29 @@
 # Voice Assistant
 
-BYD EV Pro includes a bilingual voice assistant for vehicle control with spoken commands in English or Ukrainian. Two speech recognition backends are available: **VOSK** (offline, default) and **ElevenLabs** (cloud, optional).
+BYD EV Pro includes a bilingual voice assistant for vehicle control with spoken commands in English or Ukrainian. Speech recognition runs entirely on-device using the **VOSK** engine — no internet, no API keys, no cloud services required.
 
 ---
 
-## Backends
-
-### VOSK — Offline (Default)
+## How It Works
 
 | | |
 |---|---|
 | Internet required | No |
 | API key required | No |
 | Speech recognition | On-device (VOSK engine) |
-| Spoken responses (TTS) | No — confirmation shown as text in the UI |
+| Responses | Text confirmation shown in the UI |
 | Languages | One language at a time (matches app display language) |
 
-VOSK runs entirely on the device. No data is sent anywhere. The recognition model (~80 MB for Ukrainian, ~40 MB for English) must be downloaded once — or use the **Full Edition** which includes models pre-bundled.
-
-### ElevenLabs — Cloud (Optional)
-
-| | |
-|---|---|
-| Internet required | Yes |
-| API key required | Yes ([elevenlabs.io](https://elevenlabs.io)) |
-| Speech recognition | ElevenLabs Scribe v2 |
-| Spoken responses (TTS) | Yes (`eleven_multilingual_v2`, configurable voice) |
-| Languages | Ukrainian, English, or both simultaneously |
-| Free tier | ~2.5 hours/month STT + ~10,000 chars/month TTS |
+VOSK runs entirely on the device. No data is sent anywhere. The recognition models are bundled with the app.
 
 ---
 
 ## Setup
 
-### VOSK (offline)
-
 1. Open the app and go to **Settings → Voice Assistant**.
-2. Make sure **Backend** is set to **VOSK (Offline)**.
-3. Enable the **Voice Assistant** toggle.
-4. If using the **Lite Edition**: tap **Download Model** to download the recognition model for your app language. The download is ~80 MB (Ukrainian) or ~40 MB (English). Wi-Fi recommended.
-5. Select an activation mode: **Always Listening** or **Push to Talk**.
-
-> [!NOTE]
-> The **Full Edition** includes models pre-bundled — no download needed.
-
-### ElevenLabs (cloud)
-
-1. Obtain an ElevenLabs API key at [https://elevenlabs.io](https://elevenlabs.io).
-2. Open the app and go to **Settings → Voice Assistant**.
-3. Set **Backend** to **ElevenLabs (Cloud)**.
-4. Enter your key in the **ElevenLabs API Key** field.
-5. Enable the **Voice Assistant** toggle.
-6. Select an activation mode.
+2. Enable the **Voice Assistant** toggle.
+3. Optionally enable **Listen for Wake Phrase** to activate the assistant continuously in the background.
+4. Optionally enable the **PTT Overlay** for a dedicated push-to-talk floating button.
 
 ---
 
@@ -59,10 +31,10 @@ VOSK runs entirely on the device. No data is sent anywhere. The recognition mode
 
 | Mode | How to Activate | Behavior |
 |---|---|---|
-| Wake Phrase (Always Listening) | Say the wake phrase, then say a command | Listens continuously in the background. On detecting the wake phrase, signals readiness, then waits up to 7 seconds for a command. |
-| Push to Talk (Button) | Tap the floating overlay pill | Activates immediately on tap. The pill turns green and plays a beep. Listens for a command and auto-stops after execution or a 10-second timeout. |
+| Wake Phrase (Always Listening) | Say the wake phrase, then say a command | Listens continuously in the background. On detecting the wake phrase, signals readiness, then waits up to 7 seconds for a command. Enable via **Listen for Wake Phrase** toggle. |
+| Push to Talk (PTT) | Tap the PTT overlay button | Activates immediately on tap. The button turns green and plays a beep. Listens for a command and auto-stops after execution or a 10-second timeout. Enable via **PTT Overlay** toggle. |
 
-Push-to-Talk is recommended for VOSK — it avoids continuous background recording.
+You can enable both modes simultaneously — the wake phrase listens in the background while the PTT button provides on-demand activation.
 
 ---
 
@@ -179,17 +151,14 @@ Changes take effect immediately — no need to restart the voice assistant.
 
 ## Confirmation Response
 
-After each recognized command, the assistant shows (and speaks, if ElevenLabs is active) a confirmation.
+After each recognized command, the assistant shows a text confirmation in the UI.
 
 | Name configured? | English example | Ukrainian example |
 |---|---|---|
 | Yes (e.g., "Anton") | "Hi Anton, turning on climate" | "Привiт, Anton, вмикаю клiмат" |
 | No | "Turning on climate" | "Вмикаю клiмат" |
 
-> [!NOTE]
-> With the **VOSK** backend, confirmations are shown as text only — there is no spoken response.
-
-The name is configurable in **Settings > Your Name**.
+The name is configurable in **Settings > Voice Assistant > Configure > Your Name**.
 
 ---
 
@@ -197,7 +166,7 @@ The name is configurable in **Settings > Your Name**.
 
 If the assistant is listening but does not recognize a command:
 
-- Shows (and speaks if ElevenLabs): "Command not recognized, please repeat" / "Не зрозумiв команду, повторiть"
+- Shows: "Command not recognized, please repeat" / "Не зрозумiв команду, повторiть"
 - In wake mode: extends the 7-second window
 - In PTT mode: resets the 10-second timeout
 
@@ -205,19 +174,7 @@ If the assistant is listening but does not recognize a command:
 
 ## Recognition Language
 
-| Setting | VOSK | ElevenLabs |
-|---|---|---|
-| Ukrainian only | Supported | Supported |
-| English only | Supported | Supported |
-| Both (auto-detect) | Not supported — falls back to app language | Supported |
-
-Configure in **Settings > Recognition Language**.
-
----
-
-## ElevenLabs TTS Voice
-
-When using ElevenLabs, you can set a custom voice ID in **Settings > TTS Voice ID**. Default: George (`JBFqnCBsd6RMkjVDRZzb`).
+The voice assistant recognizes one language at a time, matching the app display language. Change the app language in **Settings > Appearance > Language** to switch the recognition language.
 
 ---
 
