@@ -13,12 +13,40 @@ BYD EV Pro can connect to a Telegram bot that lets you check vehicle status, vie
 |---|---|
 | `/start` | Start the bot and see the welcome message |
 | `/register` | Link the bot to your car using your Installation ID |
-| `/report` | Get a current vehicle status report (SOC, range, temperatures, climate state, etc.) |
-| `/battery` | View battery cell voltage details |
-| `/photo` | Capture a photo from the car's camera (front, panorama, or cam0) |
-| `/video` | Capture a video from the car's camera |
-| `/cameras` | List available cameras on your head unit |
+| `/unregister` | Unlink your Telegram account from the car |
+| `/report` | Get a current vehicle status report (SOC, range, temperatures, doors, TPMS, GPS with map) |
+| `/battery` | View battery cell voltage details, SoH, pack voltage, and charging state |
+| `/photo` | Capture a photo from the car's camera (panorama, front, or cam0) |
+| `/video` | Record a 10-second video from the car's camera |
 | `/send_logs` | Upload diagnostic logs to the developer |
+
+---
+
+## Screenshots
+
+### `/report` — Vehicle Status
+
+Full status report with SOC, 12V battery, vehicle state, range, temperatures, door status, TPMS pressures, and GPS location with a map pin.
+
+![Telegram /report command](../images/telegram/telegram_report.png)
+
+### `/battery` — Battery Report
+
+Battery cell details: 12V voltage, SOC, SoH, battery temperature range, cell voltage min/max with delta, and pack voltage.
+
+![Telegram /battery command](../images/telegram/telegram_battery.png)
+
+### `/photo` — Camera Capture
+
+Captures a photo from the car's panorama camera and sends it directly to the chat.
+
+![Telegram /photo command](../images/telegram/telegram_photo.png)
+
+### `/video` — Video Recording
+
+Records a 10-second video from the panorama camera, uploads it, and sends it as a video message.
+
+![Telegram /video command](../images/telegram/telegram_video.png)
 
 ---
 

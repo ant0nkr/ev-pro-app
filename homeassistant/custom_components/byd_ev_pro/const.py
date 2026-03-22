@@ -23,6 +23,7 @@ SENSOR_DEFINITIONS: list[tuple[str, str, str | None, str | None, str | None, str
     ("battery_max_temp", "Battery Max Temperature", "temperature", "\u00b0C", "measurement", None, 1),
     ("battery_min_temp", "Battery Min Temperature", "temperature", "\u00b0C", "measurement", None, 1),
     ("front_motor_temp", "Front Motor Temperature", "temperature", "\u00b0C", "measurement", None, 0),
+    ("rear_motor_temp", "Rear Motor Temperature", "temperature", "\u00b0C", "measurement", None, 0),
     # Driving
     ("range", "EV Range", "distance", "km", "measurement", None, 0),
     ("odometer", "Odometer", "distance", "km", "total_increasing", None, 1),

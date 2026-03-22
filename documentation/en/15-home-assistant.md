@@ -15,7 +15,7 @@ BYD EV Pro can push real-time vehicle telemetry to Home Assistant via a webhook.
 | Data direction | Car → Home Assistant (one-way push) |
 | HACS component | `byd_ev_pro` |
 | Platforms | Sensor, Device Tracker |
-| Sensors | 25 |
+| Sensors | 26 |
 
 The car pushes sensor data to your Home Assistant instance at regular intervals. No polling from HA is needed — the integration receives data passively via webhook.
 
@@ -63,9 +63,25 @@ After setup, go to the integration's options to configure:
 
 ---
 
+## Screenshots
+
+### Sensor Entities
+
+All 25 sensors displayed in Home Assistant with real-time values from the vehicle.
+
+![Home Assistant sensors](../images/homeassistant/ha_sensors.png)
+
+### Device Tracker
+
+GPS location tracking with the vehicle shown on the map.
+
+![Home Assistant location](../images/homeassistant/ha_location.png)
+
+---
+
 ## Sensors
 
-The integration creates 25 sensor entities:
+The integration creates 26 sensor entities:
 
 ### Battery
 
@@ -89,6 +105,7 @@ The integration creates 25 sensor entities:
 | Battery Max Temperature | °C | Highest battery module temperature |
 | Battery Min Temperature | °C | Lowest battery module temperature |
 | Front Motor Temperature | °C | Front electric motor temperature |
+| Rear Motor Temperature | °C | Rear electric motor temperature |
 
 ### Driving
 
