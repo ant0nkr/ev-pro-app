@@ -29,6 +29,7 @@ Android-додаток для головних пристроїв BYD DiLink з 
 - **Telegram Notifications / Telegram-сповіщення** — Automatic alerts for charging events, gun connection, trip summaries; bot registration with multi-user support / Автоматичні сповіщення про зарядку, підключення пістолета, підсумки поїздок; реєстрація бота з підтримкою кількох користувачів
 - **Home Assistant Integration / Інтеграція з Home Assistant** — Push live vehicle sensors to HA via webhook; voice-triggered HA service calls; HACS custom component included / Передача датчиків авто в HA через webhook; голосові команди для сервісів HA; HACS-компонент включено
 - **WiFi / 4G / Bluetooth Keep-Alive / Утримання WiFi / 4G / Bluetooth** — Automatically re-enables WiFi, mobile data, and Bluetooth after ignition off / Автоматично відновлює WiFi, мобільний інтернет та Bluetooth після вимкнення запалення
+
 Activate the trial from the **About** tab in the app. No payment required for the first 31 days.
 
 Активуйте пробний період у вкладці **Про додаток**. Оплата не потрібна перші 31 день.
