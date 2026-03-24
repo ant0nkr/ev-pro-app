@@ -24,16 +24,14 @@ Android-додаток для головних пристроїв BYD DiLink з 
 - **Debug Control Panel / Панель налагодження** — Verify that vehicle commands reach the car and read back actual CAN values / Перевірка, що команди доходять до авто, зчитування фактичних значень CAN
 - **Diagnostic Export / Діагностика** — Full diagnostic bundle for troubleshooting / Повний діагностичний пакет для аналізу
 
-### Subscription (7-day free trial) / Підписка (7 днів безкоштовно)
+### Subscription (31-day free trial) / Підписка (31 день безкоштовно)
 
 - **Telegram Notifications / Telegram-сповіщення** — Automatic alerts for charging events, gun connection, trip summaries; bot registration with multi-user support / Автоматичні сповіщення про зарядку, підключення пістолета, підсумки поїздок; реєстрація бота з підтримкою кількох користувачів
 - **Home Assistant Integration / Інтеграція з Home Assistant** — Push live vehicle sensors to HA via webhook; voice-triggered HA service calls; HACS custom component included / Передача датчиків авто в HA через webhook; голосові команди для сервісів HA; HACS-компонент включено
 - **WiFi / 4G / Bluetooth Keep-Alive / Утримання WiFi / 4G / Bluetooth** — Automatically re-enables WiFi, mobile data, and Bluetooth after ignition off / Автоматично відновлює WiFi, мобільний інтернет та Bluetooth після вимкнення запалення
-- **Remote Commands / Віддалене керування** — Execute vehicle commands remotely via Telegram bot / Виконання команд авто віддалено через Telegram-бот
+Activate the trial from the **About** tab in the app. No payment required for the first 31 days.
 
-Activate the trial from the **About** tab in the app. No payment required for the first 7 days.
-
-Активуйте пробний період у вкладці **Про додаток**. Оплата не потрібна перші 7 днів.
+Активуйте пробний період у вкладці **Про додаток**. Оплата не потрібна перші 31 день.
 
 ## Supported Vehicles / Підтримувані автомобілі
 
