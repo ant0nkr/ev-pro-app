@@ -27,7 +27,7 @@ BYD EV Pro може передавати телеметрію автомобіл
 
 1. Відкрийте HACS у вашому екземплярі Home Assistant.
 2. Перейдіть до **Інтеграції > Користувацькі репозиторії (Custom Repositories)**.
-3. Додайте URL репозиторію: `https://github.com/ant0nkr/ev-pro-app` (категорія: Integration). HACS-компонент знаходиться у директорії `homeassistant/`.
+3. Додайте URL репозиторію: `[https://github.com/ant0nkr/ev-pro-ha-integration](https://github.com/ant0nkr/ev-pro-ha-integration)` (категорія: Integration). HACS-компонент знаходиться у директорії `homeassistant/`.
 4. Знайдіть **BYD EV Pro** та встановіть.
 5. Перезапустіть Home Assistant.
 
