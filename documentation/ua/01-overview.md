@@ -71,5 +71,6 @@ BYD EV Pro — це Android-застосунок, створений для ро
 
 - [Встановлення](02-installation.md)
 - [Сумісність](12-compatibility.md)
+- [Light vs Pro — порівняння функцій](16-light-vs-pro.md)
 - [Telegram](14-telegram.md)
 - [Home Assistant](15-home-assistant.md)
