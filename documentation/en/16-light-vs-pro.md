@@ -4,8 +4,8 @@ The BYD EV Pro ecosystem is available in four tiers:
 
 - **Free** — head unit app only, on the BYD DiLink. No cloud features. All data stays in the car.
 - **TG/HA** — Free + Telegram bot and Home Assistant (HACS) integrations. Receive alerts and control the car from Telegram or HA.
-- **Lite** — TG/HA + companion app on the phone (Android and iOS). Full remote control from the phone.
-- **Pro** — Lite + the T-Box hardware module. 24/7 connectivity, GPS, keyless proximity access, and remote start.
+- **Lite** — TG/HA + companion app on the phone (Android and iOS). Monitoring is available any time the head unit has Wi-Fi. Remote vehicle control (locks, climate, windows) works **only while the car is started** — for example, after using the factory key fob with remote start. Without a T-Box there is no way to wake the car from the phone.
+- **Pro** — Lite + the T-Box hardware module. 24/7 connectivity, GPS, keyless proximity access, and remote start directly from the phone (no key fob needed).
 
 > [!NOTE]
 > In the **Free** and **TG/HA** tiers all features run on the car or pass through the head unit. The **Lite** and **Pro** tiers add the companion app. In **Lite**, the remote channel uses the head unit's Wi-Fi — for 24/7 monitoring a **USB Wi-Fi dongle** is recommended in the car (paired with a portable 4G router or your phone's hotspot). The **Pro** edition's T-Box module has its own always-on connection, so a Wi-Fi dongle is not required.
@@ -32,7 +32,7 @@ All tiers use the same high security standards. There are no compromises.
 Legend:
 - **Yes** — feature available
 - **TG** — available via the Telegram bot
-- **Yes\*** — requires an active Wi-Fi connection on the head unit (dongle)
+- **Yes\*** — requires an active Wi-Fi connection on the head unit (dongle). Control commands additionally require the car to be started (for example, via the factory key fob with remote start)
 - **—** — not available
 
 ### On-vehicle features
@@ -142,6 +142,8 @@ Legend:
 **Notes:**
 
 - **Yes\*** means the feature requires an active Wi-Fi connection on the head unit. In the **Lite** edition a **USB Wi-Fi dongle** is recommended for 24/7 connectivity (paired with a portable 4G router or your phone's hotspot). In the **Pro** edition the T-Box module brings its own connection, so a dongle is not required.
+- **In Lite, control commands work only while the car is started.** Locks, climate, windows, trunk, and other control actions go through the DiLink head unit, which forwards them to the vehicle ECU. While the car is shut off, the ECU does not accept commands. In Lite the car must first be started — for example with the factory key fob's remote start. Monitoring (SOC, temperatures, GPS, door status, etc.) keeps working with the car off, as long as the head unit has Wi-Fi.
+- In the **Pro** edition this limitation is gone: the T-Box has its own key-fob relay, so the phone can start the car even when it is fully shut off.
 - **TG** means the feature is available via the Telegram bot. The user interacts with the bot in Telegram rather than through a separate app.
 - The built-in DiLink 4G modem currently does not work reliably — Wi-Fi is required for remote connectivity in the Lite tier.
 - Encryption, biometric checks, and anti-relay mechanisms work with the same level of security in all relevant tiers.
