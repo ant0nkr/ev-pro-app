@@ -1,149 +1,154 @@
-# BYD EV Pro — Light vs Pro
+# BYD EV Pro — Free / TG-HA / Lite / Pro
 
-The BYD EV Pro ecosystem is available in two configurations:
+The BYD EV Pro ecosystem is available in four tiers:
 
-- **Light** — head unit app on BYD DiLink + companion app on the phone. No additional hardware.
-- **Pro** — Light + the T-Box hardware module installed in the car. The module adds an always-on remote channel, GPS tracking, proximity-based keyless access, and reliable push notifications even when the car is fully off.
+- **Free** — head unit app only, on the BYD DiLink. No cloud features. All data stays in the car.
+- **TG/HA** — Free + Telegram bot and Home Assistant (HACS) integrations. Receive alerts and control the car from Telegram or HA.
+- **Lite** — TG/HA + companion app on the phone (Android and iOS). Full remote control from the phone.
+- **Pro** — Lite + the T-Box hardware module. 24/7 connectivity, GPS, keyless proximity access, and remote start.
 
 > [!NOTE]
-> In the Light edition, remote features work only while the head unit has stable internet. The built-in DiLink 4G modem currently does not work reliably, so the only stable channel is **Wi-Fi**. If you want 24/7 connectivity without a T-Box, the recommended setup is a **USB Wi-Fi dongle** in the car (for example, connected to a portable 4G router or your phone's hotspot) — the head unit stays online even after the car is shut off. With the Pro edition the T-Box provides its own independent connection, so a Wi-Fi dongle is not needed.
+> In the **Free** and **TG/HA** tiers all features run on the car or pass through the head unit. The **Lite** and **Pro** tiers add the companion app. In **Lite**, the remote channel uses the head unit's Wi-Fi — for 24/7 monitoring a **USB Wi-Fi dongle** is recommended in the car (paired with a portable 4G router or your phone's hotspot). The **Pro** edition's T-Box module has its own always-on connection, so a Wi-Fi dongle is not required.
 
 ---
 
 ## Security
 
-Both editions use the same high security standards. There are no compromises in Light.
+All tiers use the same high security standards. There are no compromises.
 
-- **End-to-end AES-256-GCM encryption** of every command and telemetry payload between phone, car, and cloud.
+- **AES-256-GCM encryption** of every payload between devices.
 - **HMAC-SHA256** authentication on every message.
-- **Biometric gate** for sensitive commands: door unlock, trunk, and remote start. Confirmed via Face ID / Touch ID / Android Biometric.
-- **One-time QR pairing** — the secret is never transmitted in plaintext.
+- **Biometric confirmation** of sensitive commands in the companion app (Face ID / Touch ID / Android Biometric) — *Lite, Pro*.
+- **One-time QR pairing** — the secret is never transmitted in plaintext — *Lite, Pro*.
 - **Per-vehicle and per-phone keys.** Compromising one device does not affect the others.
-- **RTT anti-relay protection** *(Pro)* — proximity unlock uses instant ping-pong challenges between phone and car. This blocks "relay attacks" where an attacker amplifies the BLE signal between your phone at home and the car parked outside.
-- **Local secret storage** in OS-protected vaults: Android Keystore and iOS Keychain.
+- **RTT anti-relay protection** for proximity unlock — instant ping-pong challenges block attacks where an attacker amplifies the BLE signal between phone and car — *Pro*.
+- **Local secret storage** in Android Keystore and iOS Keychain.
 - **No server-held passwords** — all keys are generated on user devices.
 
 ---
 
 ## Feature comparison
 
-### Vehicle monitoring
+Legend:
+- **Yes** — feature available
+- **TG** — available via the Telegram bot
+- **Yes\*** — requires an active Wi-Fi connection on the head unit (dongle)
+- **—** — not available
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 1 | Car on/off monitoring | No / Yes\* | Yes |
-| 2 | Door open/close monitoring | No / Yes\* | Yes |
-| 3 | Window and sunroof open/close monitoring | No / Yes\* | Yes |
-| 4 | Lock state monitoring | No / Yes\* | Yes |
-| 5 | Trunk and hood state monitoring | No / Yes\* | Yes |
-| 6 | Battery state of charge (SOC) | Yes | Yes |
-| 7 | Remaining range (km) | Yes | Yes |
-| 8 | Battery temperature | Yes | Yes |
-| 9 | Tire pressure (TPMS) | Yes | Yes |
-| 10 | Battery state of health (SOH %) | Yes | Yes |
-| 11 | 12V auxiliary battery voltage | Yes | Yes |
-| 12 | Odometer | Yes | Yes |
-| 13 | Average consumption / efficiency | Yes | Yes |
-| 14 | Cell voltages and delta | Yes | Yes |
-| 15 | Charging state and live power | Yes | Yes |
+### On-vehicle features
 
-### Location
+(All of these run locally on the BYD DiLink head unit)
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 16 | Vehicle location (GPS) | No / Yes\* | Yes (24/7) |
-| 17 | GPS accuracy and live updates | No | Yes |
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 1 | Dashboard (SOC, power, range) | Yes | Yes | Yes | Yes |
+| 2 | Battery temperature, SOH | Yes | Yes | Yes | Yes |
+| 3 | Tire pressure (TPMS) | Yes | Yes | Yes | Yes |
+| 4 | 12V auxiliary battery voltage | Yes | Yes | Yes | Yes |
+| 5 | Odometer, average consumption | Yes | Yes | Yes | Yes |
+| 6 | Cell voltages and delta | Yes | Yes | Yes | Yes |
+| 7 | Charging state and live power | Yes | Yes | Yes | Yes |
+| 8 | On-vehicle climate control | Yes | Yes | Yes | Yes |
+| 9 | Automatic charging session tracking | Yes | Yes | Yes | Yes |
+| 10 | Trip history (local) | Yes | Yes | Yes | Yes |
+| 11 | Auto-restore climate on ignition | Yes | Yes | Yes | Yes |
+| 12 | Voice assistant (36 commands) | Yes | Yes | Yes | Yes |
+| 13 | On-vehicle automation rules | Yes | Yes | Yes | Yes |
+| 14 | Quick Actions floating panel | Yes | Yes | Yes | Yes |
+| 15 | Cameras (local snapshot/video on car) | Yes | Yes | Yes | Yes |
+| 16 | Local alarm (door/hood monitoring) | Yes | Yes | Yes | Yes |
+| 17 | OTA app updates | Yes | Yes | Yes | Yes |
+| 18 | Diagnostic bundle export | Yes | Yes | Yes | Yes |
 
-### Cameras
+### Cloud integrations
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 18 | Cabin camera snapshot | Yes\* | Yes |
-| 19 | Dashcam snapshot / video | Yes\* | Yes |
-| 20 | Live camera streaming to phone | Yes\* | Yes |
-| 21 | Sentry mode (motion detection, clips) | Yes\* | Yes |
-| 22 | Sentry push alerts | No / Yes\* | Yes |
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 19 | Telegram bot (status, photos, commands) | — | Yes | Yes | Yes |
+| 20 | Home Assistant integration (HACS) | — | Yes | Yes | Yes |
+| 21 | Wi-Fi / 4G / Bluetooth keep-alive | — | Yes | Yes | Yes |
+| 22 | Telegram alerts (charging, trips) | — | Yes | Yes | Yes |
+| 23 | Charging-gun connection alert | — | Yes | Yes | Yes |
 
-### Remote climate control
+### Companion app — monitoring
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 23 | A/C on/off | No / Yes\* | Yes |
-| 24 | Climate target temperature | No / Yes\* | Yes |
-| 25 | Seat heat / ventilation (driver and passenger) | No / Yes\* | Yes |
-| 26 | Steering wheel heat | No / Yes\* | Yes |
-| 27 | Front windshield defrost | No / Yes\* | Yes |
-| 28 | Rear window defrost | No / Yes\* | Yes |
-| 29 | Auto-restore climate on ignition | Yes | Yes |
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 24 | Car on/off status | — | TG | Yes\* | Yes |
+| 25 | Door open/close status | — | TG | Yes\* | Yes |
+| 26 | Window and sunroof status | — | TG | Yes\* | Yes |
+| 27 | Lock state | — | TG | Yes\* | Yes |
+| 28 | Trunk and hood state | — | TG | Yes\* | Yes |
+| 29 | SOC in the app | — | TG | Yes\* | Yes |
+| 30 | Range in the app | — | TG | Yes\* | Yes |
+| 31 | Tire pressure in the app | — | TG | Yes\* | Yes |
+| 32 | Battery voltages / temperatures in the app | — | TG | Yes\* | Yes |
+| 33 | Vehicle location (GPS) | — | TG | Yes\* | Yes (24/7) |
 
-### Remote vehicle control
+### Companion app — control
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 30 | Lock / unlock doors | No / Yes\* | Yes |
-| 31 | Open / close trunk | No / Yes\* | Yes |
-| 32 | Close windows | No / Yes\* | Yes |
-| 33 | Window ventilation (summer) | No / Yes\* | Yes |
-| 34 | Remote start | No | Yes |
-| 35 | Biometric command confirmation | Yes | Yes |
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 34 | Lock / unlock doors | — | TG | Yes\* | Yes |
+| 35 | Open / close trunk | — | TG | Yes\* | Yes |
+| 36 | Close windows | — | TG | Yes\* | Yes |
+| 37 | Window ventilation | — | TG | Yes\* | Yes |
+| 38 | A/C on/off | — | TG | Yes\* | Yes |
+| 39 | Climate target temperature | — | TG | Yes\* | Yes |
+| 40 | Seat heat / ventilation | — | TG | Yes\* | Yes |
+| 41 | Steering wheel heat | — | TG | Yes\* | Yes |
+| 42 | Front / rear defrost | — | TG | Yes\* | Yes |
+| 43 | Biometric command confirmation | — | — | Yes | Yes |
+| 44 | Remote start | — | — | — | Yes |
 
-### Vehicle security
+### Cameras (from phone)
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 36 | Proximity unlock (keyless access) | No | Yes |
-| 37 | RTT anti-relay protection | No | Yes |
-| 38 | Alarm (door/hood monitoring) | Yes\* | Yes |
-| 39 | Auto-arm alarm when leaving | No | Yes |
-| 40 | Encrypted channels (AES-256-GCM) | Yes | Yes |
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 45 | Cabin camera snapshot | — | TG | Yes\* | Yes |
+| 46 | Dashcam snapshot / video | — | TG | Yes\* | Yes |
+| 47 | Live camera streaming to phone | — | — | Yes\* | Yes |
+| 48 | Sentry mode (motion detection on car) | Yes | Yes | Yes | Yes |
+| 49 | Sentry push alerts | — | TG | Yes\* | Yes |
 
-### Charging
+### Security (Pro exclusive)
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 41 | Live charging information | Yes | Yes |
-| 42 | Charging session history | Yes | Yes |
-| 43 | "Charging complete" push alert | No / Yes\* | Yes |
-| 44 | Low 12V battery alert | No / Yes\* | Yes |
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 50 | Proximity keyless unlock | — | — | — | Yes |
+| 51 | RTT anti-relay protection | — | — | — | Yes |
+| 52 | Auto-arm alarm on leaving | — | — | — | Yes |
+
+### Notifications
+
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 53 | "Charging complete" | — | TG | Yes\* | Yes |
+| 54 | Low 12V battery | — | TG | Yes\* | Yes |
+| 55 | Phone push notifications | — | — | Yes\* | Yes |
+| 56 | Telegram alerts | — | Yes | Yes | Yes |
 
 ### History and statistics
 
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 45 | Trip history | Yes | Yes |
-| 46 | Trip history sync to phone | No / Yes\* | Yes |
-| 47 | Statistics (mileage, energy, efficiency) | Yes | Yes |
-| 48 | Parking history | No | Yes |
-
-### Voice and automation
-
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 49 | Voice assistant (36 commands) | Yes | Yes |
-| 50 | On-vehicle automation rules | Yes | Yes |
-| 51 | Quick Actions floating panel | Yes | Yes |
-
-### Integrations
-
-| # | Feature | Light | Pro |
-|---|---------|:-----:|:---:|
-| 52 | Home Assistant integration (HACS) | Yes | Yes |
-| 53 | Telegram bot (alerts and commands) | Yes | Yes |
-| 54 | Phone push notifications | No / Yes\* | Yes |
-| 55 | OTA app updates | Yes | Yes |
+| # | Feature | Free | TG/HA | Lite | Pro |
+|---|---------|:----:|:-----:|:----:|:---:|
+| 57 | Trip history (local on car) | Yes | Yes | Yes | Yes |
+| 58 | Trip history sync to phone | — | — | Yes\* | Yes |
+| 59 | Statistics (mileage, energy, efficiency) | Yes | Yes | Yes | Yes |
+| 60 | Parking history | — | — | — | Yes |
 
 ---
 
 **Notes:**
 
-\* Works only while the car's head unit has stable internet. The built-in DiLink 4G modem currently does not work reliably — the only stable channel in Light is **Wi-Fi**. As long as the car is on home Wi-Fi or has a USB Wi-Fi dongle attached, these features work. Without an active Wi-Fi connection, remote access to the car is unavailable.
+- **Yes\*** means the feature requires an active Wi-Fi connection on the head unit. In the **Lite** edition a **USB Wi-Fi dongle** is recommended for 24/7 connectivity (paired with a portable 4G router or your phone's hotspot). In the **Pro** edition the T-Box module brings its own connection, so a dongle is not required.
+- **TG** means the feature is available via the Telegram bot. The user interacts with the bot in Telegram rather than through a separate app.
+- The built-in DiLink 4G modem currently does not work reliably — Wi-Fi is required for remote connectivity in the Lite tier.
+- Encryption, biometric checks, and anti-relay mechanisms work with the same level of security in all relevant tiers.
 
-> [!TIP]
-> For 24/7 monitoring on the Light edition, install a **USB Wi-Fi dongle** in the car (for example, paired with a portable 4G router or your phone's hotspot). The head unit stays online even after the car is shut off.
-
-In the **Pro** edition, the T-Box module provides:
-- its own independent connection (no Wi-Fi dongle required),
-- a dedicated GPS receiver,
+In the **Pro** edition, the T-Box module adds:
+- its own independent connection (no Wi-Fi dongle needed),
+- a dedicated GPS receiver for accurate positioning,
 - proximity-based keyless access with relay-attack protection (RTT),
 - reliable 24/7 push notifications,
 - remote start.

@@ -71,6 +71,6 @@ Documentation is updated alongside new releases to reflect the latest functional
 
 - [Installation](02-installation.md)
 - [Compatibility](12-compatibility.md)
-- [Light vs Pro — feature comparison](16-light-vs-pro.md)
+- [Free / TG-HA / Lite / Pro — tier comparison](16-light-vs-pro.md)
 - [Telegram](14-telegram.md)
 - [Home Assistant](15-home-assistant.md)

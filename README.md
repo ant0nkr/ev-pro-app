@@ -61,7 +61,7 @@ Developed and tested on **BYD Song Plus EV 2025** (DiLink 5.0). Compatible with 
 | 13 | [Troubleshooting](documentation/en/13-troubleshooting.md) | [Вирішення проблем](documentation/ua/13-troubleshooting.md) | Common issues / Поширені проблеми |
 | 14 | [Telegram](documentation/en/14-telegram.md) | [Telegram](documentation/ua/14-telegram.md) | Telegram bot integration / Інтеграція з Telegram-ботом |
 | 15 | [Home Assistant](documentation/en/15-home-assistant.md) | [Home Assistant](documentation/ua/15-home-assistant.md) | HA webhook integration / Інтеграція з HA через webhook |
-| 16 | [Light vs Pro](documentation/en/16-light-vs-pro.md) | [Light vs Pro](documentation/ua/16-light-vs-pro.md) | Feature comparison, security / Порівняння функцій, безпека |
+| 16 | [Tiers (Free/TG-HA/Lite/Pro)](documentation/en/16-light-vs-pro.md) | [Рівні (Free/TG-HA/Lite/Pro)](documentation/ua/16-light-vs-pro.md) | Tier comparison, security / Порівняння рівнів, безпека |
 
 ## Home Assistant (HACS)
 
