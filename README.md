@@ -65,11 +65,13 @@ Developed and tested on **BYD Song Plus EV 2025** (DiLink 5.0). Compatible with 
 
 ## Home Assistant (HACS)
 
-A custom component is included in this repository for Home Assistant integration. To install:
+The Home Assistant custom component lives in the standalone
+[`ev-pro-ha-integration`](https://github.com/ant0nkr/ev-pro-ha-integration)
+repository. To install:
 
 1. Open HACS in Home Assistant
 2. Go to Integrations → Custom repositories
-3. Add `ant0nkr/ev-pro-app` with category **Integration**
+3. Add `ant0nkr/ev-pro-ha-integration` with category **Integration**
 4. Install **BYD EV Pro** and restart Home Assistant
 5. Configure the webhook URL and access token in the integration settings
 
@@ -77,11 +79,12 @@ Requires an active subscription in the app.
 
 ---
 
-Користувацький компонент для Home Assistant включено в цей репозиторій. Для встановлення:
+Користувацький компонент для Home Assistant знаходиться в окремому репозиторії
+[`ev-pro-ha-integration`](https://github.com/ant0nkr/ev-pro-ha-integration). Для встановлення:
 
 1. Відкрийте HACS в Home Assistant
 2. Перейдіть до Інтеграції → Користувацькі репозиторії
-3. Додайте `ant0nkr/ev-pro-app` з категорією **Integration**
+3. Додайте `ant0nkr/ev-pro-ha-integration` з категорією **Integration**
 4. Встановіть **BYD EV Pro** та перезапустіть Home Assistant
 5. Налаштуйте webhook URL та токен доступу в налаштуваннях інтеграції
 

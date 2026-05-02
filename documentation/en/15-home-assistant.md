@@ -27,13 +27,13 @@ The car pushes sensor data to your Home Assistant instance at regular intervals.
 
 1. Open HACS in your Home Assistant instance.
 2. Go to **Integrations > Custom Repositories**.
-3. Add the repository URL: `https://github.com/ant0nkr/ev-pro-app` (category: Integration). The HACS component is located in the `homeassistant/` directory.
+3. Add the repository URL: `https://github.com/ant0nkr/ev-pro-ha-integration` (category: Integration).
 4. Search for **BYD EV Pro** and install.
 5. Restart Home Assistant.
 
 ### Manual
 
-1. Download the `homeassistant/custom_components/byd_ev_pro/` directory from this repository.
+1. Download the `custom_components/byd_ev_pro/` directory from `https://github.com/ant0nkr/ev-pro-ha-integration`.
 2. Copy it to your Home Assistant `config/custom_components/` folder.
 3. Restart Home Assistant.
 
